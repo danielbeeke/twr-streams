@@ -1,72 +1,62 @@
 <!DOCTYPE html>
 <html>
-  <head>
-  <title></title>
+    <head>
+        <title>Stream player TWR</title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;" />
-	<meta charset="utf-8">
-	<style type="text/css">
-
-		#playcontrols {
-			text-align: center;
-			margin-top: 50px;
-		}
-		#playcontrols #activityindicator, #playcontrols #stopbutton {
-			display: none;
-		}
-
-		#textpositiondiv {
-			margin-top: 100px;
-		}
-
-	</style>
-	<script type="text/javascript" charset="utf-8" src="scripts/html5audio.js?stream=mp3"></script>
-	<script type="text/javascript" charset="utf-8" src="cordova-2.0.0.js"></script>
-  </head>
-  <body>
-    <table>
-        <tr>
-            <td>
-                <h2>mp3</h2>
-                <a href="?stream=mp3-mp3">mp3</a><br />
-                <a href="?stream=mp3-m3u">mp3 m3u</a><br />
-                <a href="?stream=mp3-pls">mp3 pls</a><br />
-                <a href="?stream=mp3-flv">mp3 flv</a><br />
-            </td>
-            <td>
-                <h2>AAC</h2>
-                <a href="?stream=aac-pls">aac pls</a><br />
-                <a href="?stream=aac-sdp">aac sdp</a><br />
-                <a href="?stream=aac-m3u">aac m3u</a><br />
-                <a href="?stream=aac-http">http aac</a><br />
-                <a href="?stream=aac-rtsp">rtsp aac</a><br />
-                <a href="?stream=aac-flv">aac flv</a><br />
-            </td>
-            <td>
-                <h2>VORBIS</h2>
-                <a href="?stream=vb-pls">vorbis pls</a><br />
-                <a href="?stream=vb-m3u">vorbis m3u</a><br />
-                <a href="?stream=vb=ogg">vorbis ogg</a><br />
-            </td>
-
-        </tr>
-    </table>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;" />
+        <meta charset="utf-8">
+        <link href='css/style.css' rel='stylesheet'>
+        <script type="text/javascript" src="scripts/jquery-1.9.1.min.js"></script>
+        <script type="text/javascript" charset="utf-8" src="cordova-2.0.0.js"></script>
+        <script type="text/javascript" charset="utf-8" src="scripts/html5audio.js"></script>
 
 
-  	  <div id="playcontrols">
-		  <a href="#" id="playbutton" onClick="html5audio.play();return false;"><img src="images/playbutton.png" /></a>
-		  <a href="#" id="activityindicator" onClick="html5audio.stop();return false;"><img src="images/activityindicator.gif" /></a>
-		  <a href="#" id="stopbutton" onClick="html5audio.stop();return false;"><img src="images/stopbutton.png" /></a>
-	  </div>
-	  <div id="textpositiondiv">Time played: <span id="textposition">stopped</span></div>
-	  <script type="text/javascript">
-		  playButton = document.getElementById('playbutton');
-		  stopButton = document.getElementById('stopbutton');
-		  activityIndicator = document.getElementById('activityindicator');
-		  textPosition = document.getElementById('textposition');
-	  </script>
+    </head>
+    <body>
+        <div id="wrapper">
+
+            <div id="menuWrapper">
+                 <div id='menu'>
+                    <ul id='appMenu'>
+                    </ul>
+                 </div>
+            </div>
+            <div id="sliderWrapper">
+                <div id='menuBar'>
+                    <div id="menuToggle" class="menubutton menuToggle"></div>
+                </div>
+                <div id='mySwipe' style='margin:0 auto' class='swipe'>
+                    <div id="sw-wrap" class='swipe-wrap'>
+
+                    </div>
+                </div>
+                <div id="streamInfo">
+                    <div id="nowPlaying"></div>
+                    <div id="textpositiondiv">Afspeeltijd: <span id="textposition">gestopt</span></div>
+                </div>
+                <nav id="pager">
+                    <ul id="position">
+
+                    </ul>
+                </nav>
+
+                <div id="player">
+                    <div id="playcontrols">
+                        <a href="#" id="playbutton" onClick="html5audio.play();return false;"><img src="images/playbutton.png" /></a>
+                        <a href="#" id="activityindicator" onClick="html5audio.stop();return false;"><img src="images/activityindicator.gif" /></a>
+                        <a href="#" id="stopbutton" onClick="html5audio.stop();return false;"><img src="images/stopbutton.png" /></a>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
+
+        <script type="text/javascript" src="scripts/myMenu.js"></script>
+        <script type="text/javascript" src="scripts/player.js"></script>
+        <script type="text/javascript" src='scripts/swipe.js'></script>
+        <script type="text/javascript" src='scripts/mySwipe.js'></script>
+        <script type="text/javascript" src="scripts/parseStreams.js"></script>
 
 
   </body>
