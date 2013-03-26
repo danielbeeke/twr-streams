@@ -1,4 +1,5 @@
-/* line 4, ../sass/style.scss */
+/* Reset */
+/* line 10, ../sass/style.scss */
 html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, del, dfn, em, img, ins, kbd, q, samp, small, strong, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, table, tbody, tfoot, thead, tr, th, td, article, aside, footer, header, nav, section {
   margin: 0;
   padding: 0;
@@ -9,85 +10,118 @@ html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, del, dfn, em, 
   background: transparent;
 }
 
-/* line 13, ../sass/style.scss */
+/* line 20, ../sass/style.scss */
 body {
   -webkit-text-size-adjust: none;
+  -webkit-touch-callout: none;
   font-family: sans-serif;
-  min-height: 416px;
   margin: 0;
   padding: 0;
   font-family: helvetica;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
 }
 
-/* line 22, ../sass/style.scss */
+/* line 31, ../sass/style.scss */
+#wrapper,
 html, body {
+  position: absolute;
+  width: 100%;
   background: #f3f3f3;
   height: 100%;
-}
-
-/* line 28, ../sass/style.scss */
-#wrapper {
-  position: absolute;
-  height: 100%;
-  width: 100%;
   overflow: hidden;
 }
 
-/* line 35, ../sass/style.scss */
+/* line 39, ../sass/style.scss */
 #menuWrapper {
-  position: absolute;
-  height: 100%;
+  background: white;
   width: 100%;
+  height: 100%;
 }
 
-/* line 41, ../sass/style.scss */
-#sliderWrapper {
+/* line 45, ../sass/style.scss */
+#infoPage {
+  -webkit-transition: all 0.6s;
+  -moz-transition: all 0.6s;
+  -o-transition: all 0.6s;
+  transition: all 0.6s;
+  z-index: 200;
   position: absolute;
-  width: 100%;
-  height: 100%;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+  background-image: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 100, color-stop(0%, #ffffff), color-stop(100%, #d6f5ff));
+  background-image: -webkit-radial-gradient(#ffffff, #d6f5ff);
+  background-image: -moz-radial-gradient(#ffffff, #d6f5ff);
+  background-image: -o-radial-gradient(#ffffff, #d6f5ff);
+  background-image: radial-gradient(#ffffff, #d6f5ff);
+}
+/* line 57, ../sass/style.scss */
+#infoPage .inner {
+  padding: 0 20px 20px;
+}
+
+/* line 63, ../sass/style.scss */
+#infoPage.invisible {
+  z-index: -10;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+}
+
+/* line 68, ../sass/style.scss */
+#contentWrapper {
+  -webkit-box-shadow: -3px 0px 8px 2px #929292;
+  -moz-box-shadow: -3px 0px 8px 2px #929292;
+  box-shadow: -3px 0px 8px 2px #929292;
+  background: white;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
-  z-index: 101;
-  -webkit-box-shadow: -3px 0px 8px 2px #cdcdcd;
-  box-shadow: -3px 0px 8px 2px #cdcdcd;
   -webkit-transition: all 0.4s;
   -moz-transition: all 0.4s;
   -o-transition: all 0.4s;
   transition: all 0.4s;
-  background-color: #ffffff;
 }
-/* line 54, ../sass/style.scss */
-#sliderWrapper .swipe {
-  overflow: hidden;
-  visibility: hidden;
-  position: relative;
-  background-color: #ffffff;
+/* line 79, ../sass/style.scss */
+#contentWrapper #slides {
   height: 100%;
-}
-/* line 61, ../sass/style.scss */
-#sliderWrapper .swipe-wrap {
   overflow: hidden;
-  position: relative;
-  height: 100%;
 }
-/* line 66, ../sass/style.scss */
-#sliderWrapper .swipe-wrap > div {
+/* line 82, ../sass/style.scss */
+#contentWrapper #slides .slide {
+  background: url(../images/TWR-worship-bg.png) bottom center no-repeat;
   float: left;
   height: 100%;
-  position: relative;
-  background: radial-gradient(#ffffff, #d6f5ff);
-  background: -webkit-radial-gradient(white, #d6f5ff);
 }
-/* line 72, ../sass/style.scss */
-#sliderWrapper .swipe-wrap > div .description {
-  width: 80%;
+/* line 87, ../sass/style.scss */
+#contentWrapper #slides .slide .inner {
+  position: relative;
+}
+/* line 90, ../sass/style.scss */
+#contentWrapper #slides .slide .inner img.bg {
   margin: 0 auto;
-  margin-top: 180px;
+  height: auto;
+  position: absolute;
+}
+/* line 95, ../sass/style.scss */
+#contentWrapper #slides .slide .inner img.text {
+  position: absolute;
+  max-width: 140px;
+  margin: 0 auto;
+  top: 20px;
+  z-index: 10;
 }
 
-/* line 80, ../sass/style.scss */
-.active-menu #sliderWrapper {
+/* line 107, ../sass/style.scss */
+body.active-menu #contentWrapper {
   -webkit-transform: translate3d(85%, 0, 0);
   -moz-transform: translate3d(85%, 0, 0);
   -ms-transform: translate3d(85%, 0, 0);
@@ -95,130 +129,49 @@ html, body {
   transform: translate3d(85%, 0, 0);
 }
 
-/* line 85, ../sass/style.scss */
-#playcontrols {
-  text-align: center;
-}
-
-/* line 88, ../sass/style.scss */
-#playcontrols #activityindicator, #playcontrols #stopbutton {
-  display: none;
-}
-
-/* line 93, ../sass/style.scss */
-#player {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  background-color: #000000;
-  z-index: 100;
-  height: 75px;
-  padding-top: 10px;
-  width: 100%;
-  /*display: none;*/
-}
-
-/* line 104, ../sass/style.scss */
-nav#pager {
-  position: absolute;
-  bottom: 85px;
-  height: 10px;
-  padding: 5px 0;
-  background: #333333;
-  width: 100%;
-}
-/* line 112, ../sass/style.scss */
-nav#pager ul#position {
-  margin: 0 auto;
-  position: relative;
-  display: block;
-  padding: 0;
-  float: none;
-  text-align: center;
-  line-height: 0;
-}
-/* line 121, ../sass/style.scss */
-nav#pager ul#position li {
-  display: inline-block;
-  height: 10px;
-  width: 10px;
-  padding: 0;
-  margin: 0 5px;
-  background-color: #cccccc;
-  position: relative;
-}
-/* line 131, ../sass/style.scss */
-nav#pager ul#position li.on {
-  background-color: #0066ff;
-}
-
-/* line 137, ../sass/style.scss */
-.testbutton {
-  display: block;
-  width: 200px;
-  height: 50px;
-  margin: 10px auto;
-  background-color: #ccc;
-  clear: both;
-  text-align: center;
-}
-
-/* line 147, ../sass/style.scss */
-.menuBar {
-  background: radial-gradient(#ffffff, #d6f5ff);
-  background: -webkit-radial-gradient(white, #d6f5ff);
+/* line 111, ../sass/style.scss */
+#menuBar, #logoBar {
+  background-image: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 100, color-stop(0%, #ffffff), color-stop(100%, #d6f5ff));
+  background-image: -webkit-radial-gradient(#ffffff, #d6f5ff);
+  background-image: -moz-radial-gradient(#ffffff, #d6f5ff);
+  background-image: -o-radial-gradient(#ffffff, #d6f5ff);
+  background-image: radial-gradient(#ffffff, #d6f5ff);
   height: 74px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: inherit;
-  width: 100%;
 }
 
-/* line 158, ../sass/style.scss */
-#menu {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #f2f2f2;
-}
-/* line 166, ../sass/style.scss */
-#menu #appMenu {
-  margin: 90px 20% 10% 10%;
-}
-
-/* line 170, ../sass/style.scss */
-#menuWrapper .menuBar {
-  z-index: 90;
-  border-bottom: 1px solid #bfbfbf;
-}
-/* line 173, ../sass/style.scss */
-#menuWrapper .menuBar .menuLogo {
+/* line 117, ../sass/style.scss */
+#streamLogo div,
+.menuLogo {
+  margin: 0 auto;
+  padding-top: 10px;
   display: block;
-  margin: 10px auto 0;
 }
 
-/* line 179, ../sass/style.scss */
-#streamInfo {
-  background-color: #333333;
-  color: #ffffff;
-  top: 74px;
-  position: absolute;
-  left: 0;
-  width: 100%;
-  height: 40px;
-}
-
-/* line 188, ../sass/style.scss */
-#streamLogo {
-  display: block;
-  margin: 10px auto 0;
+/* line 122, ../sass/style.scss */
+#streamLogo div {
   width: 90px;
 }
 
-/* line 193, ../sass/style.scss */
+/* line 125, ../sass/style.scss */
+#streamInfo {
+  background-color: #1e1e1e;
+  min-height: 60px;
+  color: #ffffff;
+  padding: 5px 20px;
+  text-align: center;
+}
+/* line 131, ../sass/style.scss */
+#streamInfo #streamName {
+  font-weight: bold;
+  display: block;
+}
+/* line 135, ../sass/style.scss */
+#streamInfo #nowPlaying {
+  display: block;
+  font-size: 90%;
+}
+
+/* line 140, ../sass/style.scss */
 div.menubutton {
   display: inline-block;
   height: 30px;
@@ -229,7 +182,114 @@ div.menubutton {
   left: 10px;
 }
 
-/* line 202, ../sass/style.scss */
+/* line 150, ../sass/style.scss */
+#appMenu {
+  padding: 0 0 10%;
+  list-style: none;
+  font-size: 90%;
+  color: #666666;
+}
+/* line 155, ../sass/style.scss */
+#appMenu li {
+  border-bottom: 1px solid #d9d9d9;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #f3f3f3));
+  background-image: -webkit-linear-gradient(#ffffff, #f3f3f3);
+  background-image: -moz-linear-gradient(#ffffff, #f3f3f3);
+  background-image: -o-linear-gradient(#ffffff, #f3f3f3);
+  background-image: linear-gradient(#ffffff, #f3f3f3);
+}
+/* line 156, ../sass/style.scss */
+#appMenu li a {
+  padding: 20px 25% 10px 10%;
+  color: #666666;
+  text-decoration: none;
+  display: block;
+}
+/* line 164, ../sass/style.scss */
+#appMenu li:first-child {
+  border-top: 1px solid #d9d9d9;
+}
+/* line 167, ../sass/style.scss */
+#appMenu li:last-child {
+  margin-bottom: 0;
+}
+/* line 170, ../sass/style.scss */
+#appMenu li .streamName {
+  font-weight: bold;
+}
+
+/* line 176, ../sass/style.scss */
+#playerControls {
+  position: absolute;
+  bottom: 0;
+  height: 85px;
+  background-image: -webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(0%, #000000), color-stop(50%, #000000), color-stop(51%, #424242), color-stop(100%, #8d8d8d));
+  background-image: -webkit-linear-gradient(bottom, #000000 0%, #000000 50%, #424242 51%, #8d8d8d 100%);
+  background-image: -moz-linear-gradient(bottom, #000000 0%, #000000 50%, #424242 51%, #8d8d8d 100%);
+  background-image: -o-linear-gradient(bottom, #000000 0%, #000000 50%, #424242 51%, #8d8d8d 100%);
+  background-image: linear-gradient(bottom, #000000 0%, #000000 50%, #424242 51%, #8d8d8d 100%);
+  width: 100%;
+}
+/* line 182, ../sass/style.scss */
+#playerControls #playStream {
+  background: url("../images/play-button.png") no-repeat;
+  width: 30px;
+  height: 28px;
+  display: block;
+  margin: 7px auto;
+}
+/* line 189, ../sass/style.scss */
+#playerControls #stopStream {
+  background: url("../images/stop-button.png") no-repeat;
+  width: 30px;
+  height: 28px;
+  display: block;
+  margin: 7px auto;
+}
+
+/* line 197, ../sass/style.scss */
 .hidden {
-  display: none;
+  display: none !important;
+}
+
+/* line 200, ../sass/style.scss */
+nav#pager {
+  position: absolute;
+  bottom: 85px;
+  height: 8px;
+  padding: 4px 0;
+  background: #333333;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #999999), color-stop(100%, #656565));
+  background-image: -webkit-linear-gradient(#999999, #656565);
+  background-image: -moz-linear-gradient(#999999, #656565);
+  background-image: -o-linear-gradient(#999999, #656565);
+  background-image: linear-gradient(#999999, #656565);
+  width: 100%;
+}
+/* line 209, ../sass/style.scss */
+nav#pager ul#position {
+  margin: 0 auto;
+  position: relative;
+  display: block;
+  padding: 0;
+  float: none;
+  text-align: center;
+  line-height: 0;
+}
+/* line 218, ../sass/style.scss */
+nav#pager ul#position li {
+  display: inline-block;
+  height: 8px;
+  width: 8px;
+  padding: 0;
+  margin: 0 3px;
+  background-color: #cccccc;
+  position: relative;
+  -webkit-border-radius: 4px 4px;
+  -moz-border-radius: 4px / 4px;
+  border-radius: 4px / 4px;
+}
+/* line 229, ../sass/style.scss */
+nav#pager ul#position li.on {
+  background-color: #0099ff;
 }

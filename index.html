@@ -9,55 +9,60 @@
         <script type="text/javascript" src="scripts/jquery-1.9.1.min.js"></script>
         <script type="text/javascript" src="scripts/twig.min.js"></script>
         <script type="text/javascript" src="scripts/quo.js"></script>
-        <script type="text/javascript" src="scripts/swipe.js"></script>
+        <script type="text/javascript" src="scripts/jquery.transit.min.js"></script>
         <script type="text/javascript" charset="utf-8" src="cordova-2.5.0.js"></script>
 
 
     </head>
     <body class="active-menu">
+        <div id="fb-root"></div>
+        <div id="infoPage" class="invisible">
+            <div class="inner">
+                <img src="images/TWR-algemeen.png" class="menuLogo">
+                <a id="closeInfo" href="#">Sluiten</a>
+            <p>Deze app is ontwikkeld door TransWorldRadio Nederland. Voor meer informatie kunt u contact opnemen met <a href="mailto:info@transworldradio.nl">info@transworldradio.nl</a></p>
+            </div>
+        </div>
         <div id="wrapper">
-
             <div id="menuWrapper">
-                 <div class='menuBar'><img src="images/TWR-algemeen.png" class="menuLogo"></div>
+                 <div id='menuBar'><img src="images/TWR-algemeen.png" class="menuLogo"></div>
                  <div id='menu'>
 
                  </div>
             </div>
-            <div id="sliderWrapper">
-                <div class='menuBar'>
-                    <div id="menuToggle" class="menubutton menuToggle"></div>
-                    <div id="streamLogo"></div>
-                </div>
-                <div id='mySwipe' style='margin:0 auto' class='swipe'>
-                    <div id="sw-wrap" class='swipe-wrap'>
-
+            <div id="contentWrapper">
+                <div id='header'>
+                    <div id="logoBar">
+                        <div id="menuToggle" class="menubutton menuToggle"></div>
+                        <div id="streamLogo">
+                            <div></div>
+                        </div>
                     </div>
-                </div>
-                <div id="streamInfo">
-                    <div id="nowPlaying"></div>
-                    <div id="textpositiondiv">Afspeeltijd: <span id="textposition">gestopt</span></div>
-                </div>
-                <nav id="pager">
-                </nav>
+                    <div id="streamInfo">
+                        <span id="streamName"></span>
+                        <span id="nowPlaying"></span>
+                    </div>
 
+                </div>
+                <div id="slides">
+                </div>
                 <div id="player">
-                    <div id="playcontrols">
-                        <a href="#" id="playStream">play</a>
-                        <a href="#" id="activityindicator">loading</a>
-                        <a href="#" id="stopStream" class="hidden">stop</a>
+                    <nav id="pager"></nav>
+                    <div id="playerControls">
+                        <a href="#" id="playStream"></a>
+                        <a href="#" id="stopStream" class="hidden"></a>
                     </div>
                 </div>
             </div>
         </div>
 
         <script type="text/javascript" src="scripts/init.js"></script>
-        <script type="text/javascript" src="scripts/parseStreams.js"></script>
-        <script type="text/javascript" src="scripts/mySwipe.js"></script>
         <script type="text/javascript" src="scripts/menu.js"></script>
+        <script type="text/javascript" src="scripts/social.js"></script>
         <script type="text/javascript" src="scripts/streamController.js"></script>
+        <script type="text/javascript" src="scripts/touchController.js"></script>
         <script type="text/javascript" src="scripts/playerControls.js"></script>
         <script type="text/javascript" src="scripts/nowPlaying.js"></script>
         <script type="text/javascript" src="scripts/retina.js"></script>
-
   </body>
 </html>

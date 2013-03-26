@@ -3,19 +3,17 @@
 (function ($) {
 
   var interval;
-    // $fn.twrCallFunctions.streamMeta;
-  $.fn.twrCallFunctions.getMetadataIntervalCallback = function(streamMeta) {
-    jQuery.getJSON('//www.yourmuze.com/perl/get_metadata.pl?station=' + streamMeta + '&callback=?', ymReceiveMetaData = function (data) {
-      $('#nowPlaying').html(data.now_playing);
-    });
+
+  $.fn.twrCallFunctions.getMetadataIntervalCallback = function() {
+    jQuery.getJSON('http://www.yourmuze.com/perl/get_metadata.pl?station=' + $.fn.currentStream.streamMeta + '&callback=?');
   }
-  $.fn.twrCallFunctions.setMetadataInterval = function(streamMeta) {
-    $.fn.twrCallFunctions.streamMeta = streamMeta;
+  $.fn.twrCallFunctions.setMetadataInterval = function() {
+
     // Init
-    $.fn.twrCallFunctions.getMetadataIntervalCallback(streamMeta);
+    $.fn.twrCallFunctions.getMetadataIntervalCallback();
 
     // Next intervals
-    interval = setInterval(function() { $.fn.twrCallFunctions.getMetadataIntervalCallback(streamMeta) }, 5000);
+    interval = setInterval("$.fn.twrCallFunctions.getMetadataIntervalCallback();", 5000);
 
   }
 
@@ -26,3 +24,8 @@
   }
 
 })(jQuery);
+
+
+  function ymReceiveMetaData(data) {
+        $('#nowPlaying').html(data.now_playing);
+  }

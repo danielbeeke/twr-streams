@@ -1,6 +1,12 @@
 @import "compass/css3/transition";
 @import "compass/css3/transform";
+@import "compass/css3/images";
+@import "compass/css3/box-shadow";
+@import "compass/css3/border-radius";
+@import "compass/css3/user-interface";
+@import "compass/css3/opacity";
 
+/* Reset */
 html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, del, dfn, em, img, ins, kbd, q, samp, small, strong, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, table, tbody, tfoot, thead, tr, th, td, article, aside, footer, header, nav, section {
   margin:0;
   padding:0;
@@ -10,103 +16,194 @@ html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, del, dfn, em, 
   vertical-align:baseline;
   background:transparent;
 }
+
 body {
   -webkit-text-size-adjust:none;
+  -webkit-touch-callout:none;
   font-family:sans-serif;
-  min-height:416px;
   margin: 0;
   padding: 0;
   font-family: helvetica;
+  @include user-select(none);
 }
 
+#wrapper,
 html, body {
+  position: absolute;
+  width: 100%;
   background: #f3f3f3;
   height: 100%;
-}
-
-
-#wrapper {
-  position: absolute;
-  height: 100%;
-  width: 100%;
   overflow: hidden;
 }
 
 #menuWrapper {
-  position:absolute;
-  height: 100%;
+  background: white;
   width: 100%;
+  height: 100%;
 }
 
-#sliderWrapper {
+#infoPage {
+  @include transition(all .6s);
+  z-index: 200;
   position: absolute;
-  width: 100%;
-  height: 100%;
   top: 0;
   left: 0;
-  overflow: hidden;
-  z-index: 101;
-  -webkit-box-shadow: -3px 0px 8px 2px #cdcdcd;
-  box-shadow: -3px 0px 8px 2px #cdcdcd;
-  @include transition(all .4s);
-  background-color: #ffffff;
+  width: 100%;
+  height: 100%;
+  background: white;
+  @include opacity(1);
+  @include background-image(radial-gradient(#FFFFFF, #D6F5FF));
 
-  .swipe {
-    overflow: hidden;
-    visibility: hidden;
-    position: relative;
-    background-color: #ffffff;
-    height: 100%;
+  .inner {
+    padding: 0 20px 20px;
   }
-  .swipe-wrap {
+}
+
+
+#infoPage.invisible {
+  z-index: -10;
+  @include opacity(0);
+}
+
+#contentWrapper {
+  @include box-shadow(-3px 0px 8px 2px #929292);
+  background: white;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  @include transition(all .4s);
+
+  #slides {
+    height: 100%;
     overflow: hidden;
-    position: relative;
-    height: 100%;
-  }
-  .swipe-wrap > div {
-    float:left;
-    height: 100%;
-    position: relative;
-    background: radial-gradient(#FFFFFF, #D6F5FF);
-    background: -webkit-radial-gradient(#FFFFFF, #D6F5FF);
-    .description {
-      width: 80%;
-      margin: 0 auto;
-      margin-top: 180px;
+    .slide {
+      background: url(../images/TWR-worship-bg.png) bottom center no-repeat;
+      float: left;
+      // @include background-image(radial-gradient(#FFFFFF, #D6F5FF));
+      height: 100%;
+      .inner {
+        position: relative;
+        // padding: 20px;
+        img.bg {
+          margin: 0 auto;
+          height: auto;
+          position: absolute;
+        }
+        img.text {
+          position: absolute;
+          max-width: 140px;
+          margin: 0 auto;
+          top: 20px;
+          z-index:10;
+        }
+      }
     }
   }
 }
 
-.active-menu #sliderWrapper {
+body.active-menu #contentWrapper {
   @include transform(translate3d(85%, 0, 0))
-
 }
 
-#playcontrols {
-text-align: center;
-}
-#playcontrols #activityindicator, #playcontrols #stopbutton {
-display: none;
+#menuBar, #logoBar {
+  @include background-image(radial-gradient(#FFFFFF, #D6F5FF));
+  height: 74px;
 }
 
-
-#player {
-  position: absolute;
-  bottom:0;
-  left:0;
-  background-color: #000000;
-  z-index: 100;
-  height: 75px;
+#streamLogo div,
+.menuLogo {
+  margin: 0 auto;
   padding-top: 10px;
+  display: block;
+}
+#streamLogo div {
+  width: 90px;
+}
+#streamInfo {
+  background-color: #1e1e1e;
+  min-height: 60px;
+  color: #ffffff;
+  padding: 5px 20px;
+  text-align: center;
+  #streamName {
+    font-weight: bold;
+    display: block;
+  }
+  #nowPlaying {
+    display: block;
+    font-size: 90%;
+  }
+}
+div.menubutton {
+  display: inline-block;
+  height: 30px;
+  width: 49px;
+  background: url('../images/button-menu.png');
+  position: absolute;
+  top: 30px;
+  left: 10px;
+}
+
+#appMenu {
+  padding: 0 0 10%;
+  list-style: none;
+  font-size: 90%;
+  color: #666666;
+  li {
+      a {
+        padding: 20px 25% 10px 10%;
+        color: #666666;
+        text-decoration: none;
+        display: block;
+      }
+    border-bottom: 1px solid #d9d9d9;
+    @include background-image(linear-gradient(#ffffff, #f3f3f3));
+    &:first-child {
+      border-top: 1px solid #d9d9d9;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+    .streamName {
+      font-weight: bold;
+    }
+  }
+}
+
+#playerControls {
+  position: absolute;
+  bottom: 0;
+  height: 85px;
+  @include background-image(linear-gradient(bottom, #000000 0%, #000000 50%, #424242 51%, #8d8d8d 100%));
   width: 100%;
-  /*display: none;*/
+  #playStream {
+    background: url('../images/play-button.png') no-repeat;
+    width: 30px;
+    height: 28px;
+    display: block;
+    margin: 7px auto;
+  }
+  #stopStream {
+    background: url('../images/stop-button.png') no-repeat;
+    width: 30px;
+    height: 28px;
+    display: block;
+    margin: 7px auto;
+  }
+}
+.hidden {
+  display: none !important;
 }
 nav#pager {
   position: absolute;
   bottom: 85px;
-  height: 10px;
-  padding: 5px 0;
+  height: 8px;
+  padding: 4px 0;
   background: #333333;
+  @include background-image(linear-gradient(#999999, #656565));
   width: 100%;
 
   ul#position {
@@ -120,86 +217,18 @@ nav#pager {
 
     li {
       display: inline-block;
-      height: 10px;
-      width: 10px;
+      height: 8px;
+      width: 8px;
       padding: 0;
-      margin: 0 5px;
+      margin: 0 3px;
       background-color:#cccccc;
       position: relative;
+      @include border-radius(4px, 4px);
 
     }
     li.on {
-      background-color: #0066ff;
+      background-color: #0099ff;
     }
   }
-}
-
-.testbutton {
-  display: block;
-  width: 200px;
-  height: 50px;
-  margin: 10px auto;
-  background-color: #ccc;
-  clear: both;
-  text-align: center;
-}
-
-.menuBar {
-  background: radial-gradient(#FFFFFF, #D6F5FF);
-  background: -webkit-radial-gradient(#FFFFFF, #D6F5FF);
-  height: 74px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: inherit;
-  width: 100%;
-}
-
-#menu {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #f2f2f2;
-
-  #appMenu {
-    margin: 90px 20% 10% 10%;
-  }
-}
-#menuWrapper .menuBar {
-  z-index: 90;
-  border-bottom: 1px solid #bfbfbf;
-  .menuLogo {
-    display: block;
-    margin: 10px auto 0;
-  }
-}
-
-#streamInfo {
-  background-color: #333333;
-  color: #ffffff;
-  top: 74px;
-  position: absolute;
-  left: 0;
-  width: 100%;
-  height: 40px;
-}
-#streamLogo {
-  display: block;
-  margin: 10px auto 0;
-  width: 90px;
-}
-div.menubutton {
-  display: inline-block;
-  height: 30px;
-  width: 49px;
-  background: url('../images/button-menu.png');
-  position: absolute;
-  top: 30px;
-  left: 10px;
-}
-.hidden {
-  display: none;
 }
 
