@@ -7,23 +7,26 @@
         <meta charset="utf-8">
         <link href='css/style.css' rel='stylesheet'>
         <script type="text/javascript" src="scripts/jquery-1.9.1.min.js"></script>
-        <script type="text/javascript" charset="utf-8" src="cordova-2.0.0.js"></script>
-        <script type="text/javascript" charset="utf-8" src="scripts/html5audio.js"></script>
+        <script type="text/javascript" src="scripts/twig.min.js"></script>
+        <script type="text/javascript" src="scripts/quo.js"></script>
+        <script type="text/javascript" src="scripts/swipe.js"></script>
+        <script type="text/javascript" charset="utf-8" src="cordova-2.5.0.js"></script>
 
 
     </head>
-    <body>
+    <body class="active-menu">
         <div id="wrapper">
 
             <div id="menuWrapper">
+                 <div class='menuBar'><img src="images/TWR-algemeen.png" class="menuLogo"></div>
                  <div id='menu'>
-                    <ul id='appMenu'>
-                    </ul>
+
                  </div>
             </div>
             <div id="sliderWrapper">
-                <div id='menuBar'>
+                <div class='menuBar'>
                     <div id="menuToggle" class="menubutton menuToggle"></div>
+                    <div id="streamLogo"></div>
                 </div>
                 <div id='mySwipe' style='margin:0 auto' class='swipe'>
                     <div id="sw-wrap" class='swipe-wrap'>
@@ -35,29 +38,26 @@
                     <div id="textpositiondiv">Afspeeltijd: <span id="textposition">gestopt</span></div>
                 </div>
                 <nav id="pager">
-                    <ul id="position">
-
-                    </ul>
                 </nav>
 
                 <div id="player">
                     <div id="playcontrols">
-                        <a href="#" id="playbutton" onClick="html5audio.play();return false;"><img src="images/playbutton.png" /></a>
-                        <a href="#" id="activityindicator" onClick="html5audio.stop();return false;"><img src="images/activityindicator.gif" /></a>
-                        <a href="#" id="stopbutton" onClick="html5audio.stop();return false;"><img src="images/stopbutton.png" /></a>
+                        <a href="#" id="playStream">play</a>
+                        <a href="#" id="activityindicator">loading</a>
+                        <a href="#" id="stopStream" class="hidden">stop</a>
                     </div>
                 </div>
             </div>
         </div>
 
-
-
-        <script type="text/javascript" src="scripts/myMenu.js"></script>
-        <script type="text/javascript" src="scripts/player.js"></script>
-        <script type="text/javascript" src='scripts/swipe.js'></script>
-        <script type="text/javascript" src='scripts/mySwipe.js'></script>
+        <script type="text/javascript" src="scripts/init.js"></script>
         <script type="text/javascript" src="scripts/parseStreams.js"></script>
-
+        <script type="text/javascript" src="scripts/mySwipe.js"></script>
+        <script type="text/javascript" src="scripts/menu.js"></script>
+        <script type="text/javascript" src="scripts/streamController.js"></script>
+        <script type="text/javascript" src="scripts/playerControls.js"></script>
+        <script type="text/javascript" src="scripts/nowPlaying.js"></script>
+        <script type="text/javascript" src="scripts/retina.js"></script>
 
   </body>
 </html>

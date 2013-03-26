@@ -1,19 +1,28 @@
-function getMetadataIntervalCallback() {
-  jQuery.getJSON('http://www.yourmuze.com/perl/get_metadata.pl?station=twr-stream', function ymReceiveMetaData(data) {
-   var nowPlaying = data.now_playing;
-  });
-  var nowP =  ymReceiveMetaData;
-  document.getElementById('nowPlaying').innerHTML = 'test playing' + nowP.now_playing;
-}
+//var ymReceiveMetaData = '';
 
-var interval = setInterval(getMetadataIntervalCallback, 1000);
+(function ($) {
 
-// now playing
-// function ymReceiveMetaData(nowPlayingData){
-//     var nowPlaying = nowPlayingData.now_playing;
-//     var stationTitle = nowPlayingData.station_title;
+  var interval;
+    // $fn.twrCallFunctions.streamMeta;
+  $.fn.twrCallFunctions.getMetadataIntervalCallback = function(streamMeta) {
+    jQuery.getJSON('//www.yourmuze.com/perl/get_metadata.pl?station=' + streamMeta + '&callback=?', ymReceiveMetaData = function (data) {
+      $('#nowPlaying').html(data.now_playing);
+    });
+  }
+  $.fn.twrCallFunctions.setMetadataInterval = function(streamMeta) {
+    $.fn.twrCallFunctions.streamMeta = streamMeta;
+    // Init
+    $.fn.twrCallFunctions.getMetadataIntervalCallback(streamMeta);
 
-//     var text = nowPlaying;
+    // Next intervals
+    interval = setInterval(function() { $.fn.twrCallFunctions.getMetadataIntervalCallback(streamMeta) }, 5000);
 
-//     document.getElementById('nowPlaying').innerHTML = text;
-// }
+  }
+
+  // For pausing the stream/app.
+  $.fn.twrCallFunctions.stopMetadataInterval = function() {
+    clearInterval(interval);
+    $('#nowPlaying').html(null);
+  }
+
+})(jQuery);

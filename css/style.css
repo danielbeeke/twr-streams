@@ -1,198 +1,46 @@
+/* line 4, ../sass/style.scss */
 html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, del, dfn, em, img, ins, kbd, q, samp, small, strong, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, table, tbody, tfoot, thead, tr, th, td, article, aside, footer, header, nav, section {
-  margin:0;
-  padding:0;
-  border:0;
-  outline:0;
-  font-size:100%;
-  vertical-align:baseline;
-  background:transparent;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
 }
+
+/* line 13, ../sass/style.scss */
 body {
-  -webkit-text-size-adjust:none;
-  font-family:sans-serif;
-  min-height:416px;
-}
-h1 {
-  font-size:33px;
-  margin:50px 0 15px;
-  text-align:center;
-  color:#212121;
-}
-h2 {
-  font-size:14px;
-  font-weight:bold;
-  color:#3c3c3c;
-  margin:20px 10px 10px;
-}
-small {
-  margin:0 10px 30px;
-  display:block;
-  font-size:12px;
-}
-a {
-  margin:0 0 0 10px;
-  font-size:12px;
-  color:#3c3c3c;
+  -webkit-text-size-adjust: none;
+  font-family: sans-serif;
+  min-height: 416px;
+  margin: 0;
+  padding: 0;
+  font-family: helvetica;
 }
 
-
+/* line 22, ../sass/style.scss */
 html, body {
   background: #f3f3f3;
   height: 100%;
 }
 
-#console {
-  font-size: 12px;
-  font-family:"Inconsolata", "Monaco", "Consolas", "Andale Mono", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace;
-  color: #999;
-  line-height: 18px;
-  margin-top: 20px;
-  max-height: 150px;
-  overflow: auto;
-}
-
-#mySwipe div b {
-  display:block;
-  font-weight:bold;
-  color:#14ADE5;
-  font-size:20px;
-  text-align:center;
-  margin:10px;
-  padding:100px 10px;
-  box-shadow: 0 1px #EBEBEB;
-  background: #fff;
-  border-radius: 3px;
-  border: 1px solid;
-  border-color: #E5E5E5 #D3D3D3 #B9C1C6;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  font-family: helvetica;
-}
-#playcontrols {
-text-align: center;
-}
-#playcontrols #activityindicator, #playcontrols #stopbutton {
-display: none;
-}
-
-.swipe {
-  overflow: hidden;
-  visibility: hidden;
-  position: relative;
-  background-color: #ffffff;
-  height: 100;
-}
-.swipe-wrap {
-  overflow: hidden;
-  position: relative;
-}
-.swipe-wrap > div {
-  float:left;
-  width:100%;
-  height: 100%;
-  position: relative;
-}
-.swipe-wrap > div .streamDesc {
-  width: 80%;
-  margin: 0 auto;
-  margin-top: 180px;
-}
-#player {
-  position: absolute;
-  bottom:0;
-  left:0;
-  background-color: #000000;
-  z-index: 100;
-  height: 75px;
-  padding-top: 10px;
-  width: 100%;
-  /*display: none;*/
-}
-nav#pager {
-  position: absolute;
-  bottom: 85px;
-  height: 10px;
-  padding: 5px;
-  background: #333333;
-  width: 100%;
-}
-nav#pager ul#position {
-  margin: 0 auto;
-  position: relative;
-  display: block;
-  padding: 0;
-}
-nav#pager ul#position li {
-  display: inline-block;
-  height: 10px;
-  width: 10px;
-  padding: 0;
-  margin: 0 5px;
-  float: left;
-  background-color:#cccccc;
-  position: relative;
-}
-nav#pager ul#position li.on {
-  background-color: #0066ff;
-}
-.testbutton {
-  display: block;
-  width: 200px;
-  height: 50px;
-  margin: 10px auto;
-  background-color: #ccc;
-  clear: both;
-  text-align: center;
-}
-#menuBar {
-  background: url('../images/bg_menu.png') 0 0 no-repeat;
-  height: 74px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index:102;
-  width: 100%;
-}
-#menu {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #f2f2f2;
-}
-#streamInfo {
-  background-color: #333333;
-  color: #ffffff;
-  top: 74px;
-  position: absolute;
-  left: 0;
-  width: 100%;
-  height: 40px;
-}
-div.menubutton {
-  display: inline-block;
-  height: 30px;
-  width: 49px;
-  background: url('../images/button-menu.png');
-  position: absolute;
-  top: 30px;
-  left: 10px;
-}
+/* line 28, ../sass/style.scss */
 #wrapper {
   position: absolute;
   height: 100%;
   width: 100%;
   overflow: hidden;
 }
+
+/* line 35, ../sass/style.scss */
 #menuWrapper {
-  position: :absolute;
+  position: absolute;
   height: 100%;
   width: 100%;
 }
+
+/* line 41, ../sass/style.scss */
 #sliderWrapper {
   position: absolute;
   width: 100%;
@@ -203,4 +51,185 @@ div.menubutton {
   z-index: 101;
   -webkit-box-shadow: -3px 0px 8px 2px #cdcdcd;
   box-shadow: -3px 0px 8px 2px #cdcdcd;
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  transition: all 0.4s;
+  background-color: #ffffff;
+}
+/* line 54, ../sass/style.scss */
+#sliderWrapper .swipe {
+  overflow: hidden;
+  visibility: hidden;
+  position: relative;
+  background-color: #ffffff;
+  height: 100%;
+}
+/* line 61, ../sass/style.scss */
+#sliderWrapper .swipe-wrap {
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+}
+/* line 66, ../sass/style.scss */
+#sliderWrapper .swipe-wrap > div {
+  float: left;
+  height: 100%;
+  position: relative;
+  background: radial-gradient(#ffffff, #d6f5ff);
+  background: -webkit-radial-gradient(white, #d6f5ff);
+}
+/* line 72, ../sass/style.scss */
+#sliderWrapper .swipe-wrap > div .description {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 180px;
+}
+
+/* line 80, ../sass/style.scss */
+.active-menu #sliderWrapper {
+  -webkit-transform: translate3d(85%, 0, 0);
+  -moz-transform: translate3d(85%, 0, 0);
+  -ms-transform: translate3d(85%, 0, 0);
+  -o-transform: translate3d(85%, 0, 0);
+  transform: translate3d(85%, 0, 0);
+}
+
+/* line 85, ../sass/style.scss */
+#playcontrols {
+  text-align: center;
+}
+
+/* line 88, ../sass/style.scss */
+#playcontrols #activityindicator, #playcontrols #stopbutton {
+  display: none;
+}
+
+/* line 93, ../sass/style.scss */
+#player {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #000000;
+  z-index: 100;
+  height: 75px;
+  padding-top: 10px;
+  width: 100%;
+  /*display: none;*/
+}
+
+/* line 104, ../sass/style.scss */
+nav#pager {
+  position: absolute;
+  bottom: 85px;
+  height: 10px;
+  padding: 5px 0;
+  background: #333333;
+  width: 100%;
+}
+/* line 112, ../sass/style.scss */
+nav#pager ul#position {
+  margin: 0 auto;
+  position: relative;
+  display: block;
+  padding: 0;
+  float: none;
+  text-align: center;
+  line-height: 0;
+}
+/* line 121, ../sass/style.scss */
+nav#pager ul#position li {
+  display: inline-block;
+  height: 10px;
+  width: 10px;
+  padding: 0;
+  margin: 0 5px;
+  background-color: #cccccc;
+  position: relative;
+}
+/* line 131, ../sass/style.scss */
+nav#pager ul#position li.on {
+  background-color: #0066ff;
+}
+
+/* line 137, ../sass/style.scss */
+.testbutton {
+  display: block;
+  width: 200px;
+  height: 50px;
+  margin: 10px auto;
+  background-color: #ccc;
+  clear: both;
+  text-align: center;
+}
+
+/* line 147, ../sass/style.scss */
+.menuBar {
+  background: radial-gradient(#ffffff, #d6f5ff);
+  background: -webkit-radial-gradient(white, #d6f5ff);
+  height: 74px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: inherit;
+  width: 100%;
+}
+
+/* line 158, ../sass/style.scss */
+#menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f2f2f2;
+}
+/* line 166, ../sass/style.scss */
+#menu #appMenu {
+  margin: 90px 20% 10% 10%;
+}
+
+/* line 170, ../sass/style.scss */
+#menuWrapper .menuBar {
+  z-index: 90;
+  border-bottom: 1px solid #bfbfbf;
+}
+/* line 173, ../sass/style.scss */
+#menuWrapper .menuBar .menuLogo {
+  display: block;
+  margin: 10px auto 0;
+}
+
+/* line 179, ../sass/style.scss */
+#streamInfo {
+  background-color: #333333;
+  color: #ffffff;
+  top: 74px;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 40px;
+}
+
+/* line 188, ../sass/style.scss */
+#streamLogo {
+  display: block;
+  margin: 10px auto 0;
+  width: 90px;
+}
+
+/* line 193, ../sass/style.scss */
+div.menubutton {
+  display: inline-block;
+  height: 30px;
+  width: 49px;
+  background: url("../images/button-menu.png");
+  position: absolute;
+  top: 30px;
+  left: 10px;
+}
+
+/* line 202, ../sass/style.scss */
+.hidden {
+  display: none;
 }

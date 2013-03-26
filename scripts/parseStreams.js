@@ -1,25 +1,46 @@
-$.getJSON('streams.json', function(data) {
+(function ($) {
+  document.addEventListener("deviceready", onDeviceReady, false);
 
-  var i = 0;
-  $.each(data, function(obj) {
+  function onDeviceReady(){
+    var streamTemplate = twig({
+        id: "streams",
+        href: "templates/stream.twig",
+        async: false,
+    });
 
-    var streamName = this.streamName;
-    var streamUrlAac = this.streamUrlAac;
-    var streamLogo = this.streamLogo;
-    var streamDesc = this.streamDesc;
+    var pagerTemplate = twig({
+        id: "pager",
+        href: "templates/pager.twig",
+        async: false,
+    });
 
-    $('<li><a class="menuToggle" onClick="mySwipe.slide(' + i + ', 300)">' + streamName + '</a></li>').appendTo($('#appMenu'));
-    $('<div><div class="streamDesc">' + streamDesc +'</div></div>').appendTo($('#sw-wrap'));
-    alert('add divs - ');
-     // pager
-     var pagerLi = '<li></li>';
-     if (i == 0){ pagerLi = '<li class="on"></li>'; }
+    var menuTemplate = twig({
+        id: "menu",
+        href: "templates/menu.twig",
+        async: false,
+    });
 
-     $(pagerLi).appendTo($('#position'));
+    $.getJSON('streams.json', function(streams) {
 
-     i++;
-  });
-});
+      $.fn.twrCallFunctions.data = streams;
+
+      $('#sw-wrap').html(twig({ ref: "streams" }).render(streams));
+      $('#pager').html(twig({ ref: "pager" }).render(streams));
+      $('#menu').html(twig({ ref: "menu" }).render(streams));
+
+      $.each($.fn.twrFunctions, function(index, twrFunction) {
+        twrFunction.attach();
+      });
+
+      $.fn.twrCallFunctions.setActiveStream(0, false);
+
+      $("#position li:first-child").addClass("on");
 
 
+    });
+  }
 
+// Uitcommenten
+onDeviceReady();
+
+})(jQuery);

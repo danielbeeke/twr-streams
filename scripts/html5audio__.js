@@ -1,12 +1,9 @@
-
-
 var progressTimer;
 
 var playButton;
 var stopButton;
 var activityIndicator;
 var textPosition;
-
 
 function onError(error)
 {
@@ -23,14 +20,12 @@ function pad2(number) {
 	return (number < 10 ? '0' : '') + number
 }
 
+var myaudioURL = '';
+var myaudio = new Audio(myaudioURL);
+var isPlaying = false;
+var readyStateInterval = null;
 
-var $.fn.twrCallFunctions.html5audio = {
-
-	var myaudioURL = '';
-	var myaudio = new Audio(myaudioURL);
-	var isPlaying = false;
-	var readyStateInterval = null;
-
+$.fn.twrCallFunctions.html5audio = {
 	play: function()
 	{
 		isPlaying = true;
@@ -82,8 +77,7 @@ var $.fn.twrCallFunctions.html5audio = {
 			 );
 		}, false);
 	},
-	pause: function()
-	{
+	pause: function() {
 		isPlaying = false;
 		clearInterval(readyStateInterval);
 		myaudio.pause();
@@ -91,8 +85,7 @@ var $.fn.twrCallFunctions.html5audio = {
 		activityIndicator.style.display = 'none';
 		playButton.style.display = 'block';
 	},
-	stop: function ()
-	{
+	stop: function() {
 		isPlaying = false;
 		clearInterval(readyStateInterval);
 		myaudio.pause();
@@ -103,4 +96,12 @@ var $.fn.twrCallFunctions.html5audio = {
 		myaudio = new Audio(myaudioURL);
 		textPosition.innerHTML = '';
 	}
+};
+
+function getUrlVars() {
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+        vars[key] = value;
+    });
+    return vars;
 }

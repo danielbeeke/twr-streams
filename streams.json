@@ -1,28 +1,23 @@
-[{
-  "streamName"      : "Worship & Praise",
-  "streamUrlMp3"    : "http://http.yourmuze.com/twr-stream/mp3-128-s.mp3",
-  "streamUrlAac"    : "http://www.yourmuze.com/desktop/twr-stream/twrvooru.m3u",
-  "streamLogo"      : "",
-  "streamDesc"      : "Via TWR Worship en Praise kunt u 24 uur per dag luisteren naar de mooiste gospelmuziek via internet.",
-  "streamSocialFb"  : "",
-  "streamSocialTw"  : ""
-},
-{
-  "streamName"      : "Richt je hart op God",
-  "streamUrlMp3"    : "http://http.yourmuze.com/w-praise/mp3-128-s.mp3",
-  "streamUrlAac"    : "http://www.yourmuze.com/desktop/w-praise/wpraise.m3u",
-  "streamLogo"      : "",
-  "streamDesc"      : "Deze stream is bedoeld om u geestelijk op te bouwen en te bemoedigen in uw dagelijks leven met God.",
-  "streamSocialFb"  : "",
-  "streamSocialTw"  : ""
-},
-{
-  "streamName"      : "Stream 3",
-  "streamUrlMp3"    : "http://http.yourmuze.com/w-praise/mp3-128-s.mp3",
-  "streamUrlAac"    : "http://www.yourmuze.com/desktop/w-praise/wpraise.m3u",
-  "streamLogo"      : "",
-  "streamDesc"      : "Streambeschrijving",
-  "streamSocialFb"  : "",
-  "streamSocialTw"  : ""
+{ "streams": [
+    {
+      "streamName"      : "Worship & Praise",
+      "streamMeta"      : "w-praise",
+      "streamUrlMp3"    : "http://http.yourmuze.com/w-praise/mp3-128-s.mp3",
+      "streamUrlAac"    : "http://www.yourmuze.com/desktop/w-praise/wpraise.m3u",
+      "streamLogo"      : "TWR-WP",
+      "streamDesc"      : "Via TWR Worship en Praise kunt u 24 uur per dag luisteren naar de mooiste gospelmuziek via internet.",
+      "streamSocialFb"  : "",
+      "streamSocialTw"  : ""
+    },
+    {
+      "streamName"      : "Richt je hart op God",
+      "streamMeta"      : "twr-stream",
+      "streamUrlMp3"    : "http://http.yourmuze.com/twr-stream/mp3-128-s.mp3",
+      "streamUrlAac"    : "http://www.yourmuze.com/desktop/twr-stream/twrvooru.m3u",
+      "streamLogo"      : "TWR-R",
+      "streamDesc"      : "Deze stream is bedoeld om u geestelijk op te bouwen en te bemoedigen in uw dagelijks leven met God.",
+      "streamSocialFb"  : "",
+      "streamSocialTw"  : ""
+    }
+  ]
 }
-]
