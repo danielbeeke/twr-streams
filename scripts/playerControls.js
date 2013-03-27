@@ -12,7 +12,6 @@
         $.fn.twrCallFunctions.stopActiveStream();
         return false;
       });
-
     }
   };
 

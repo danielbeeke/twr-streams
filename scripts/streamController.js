@@ -63,11 +63,27 @@
     $('#streamName').html(stream.streamName);
   }
 
-  //document.addEventListener("pause", onPause, false);
+  $.fn.twrCallFunctions.setSlideHeight = function() {
+    var slideHeight = $(window).height() - (101 + 144);
+    var bannerWidth = $(window).width();
 
-  // function onPause() {
+    $.each($('.slide'), function(){
+      $(this).css("height", slideHeight + 'px');
+    });
+    $.each($('.streamBanner'), function(){
+      $(this).css("width", bannerWidth + 'px')
+    })
+  }
 
-  //   $.fn.twrCallFunctions.stopActiveStream();
-  // }
+  $.fn.twrFunctions.slideHeightInit = {
+    attach: function () {
+      $.fn.twrCallFunctions.setSlideHeight();
+
+      $(window).resize(function() {
+        $.fn.twrCallFunctions.setSlideHeight();
+      });
+    }
+  };
+
 
 })(jQuery);
