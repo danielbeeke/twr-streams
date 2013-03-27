@@ -45,13 +45,22 @@ $('body').addClass($.fn.twrCallFunctions.deviceType);
         twrFunction.attach();
       });
 
+      var slideHeight = $(window).height() - (91 + 144);
+
+      $.each($('.slide'), function(){
+        $(this).css("height", slideHeight + 'px');
+      });
+
+
       // Active BUT not start the first stream.
       $.fn.twrCallFunctions.setActiveStream(0, false);
 
     });
+
   }
 
 // Only for debugging on computers without Cordova.
 onDeviceReady();
+
 
 })(jQuery);

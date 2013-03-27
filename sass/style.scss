@@ -26,6 +26,10 @@ body {
   font-family: helvetica;
   @include user-select(none);
 }
+a {
+  color: #00B4F1;
+  text-decoration: none;
+}
 
 #wrapper,
 html, body {
@@ -53,9 +57,11 @@ html, body {
   background: white;
   @include opacity(1);
   @include background-image(radial-gradient(#FFFFFF, #D6F5FF));
-
   .inner {
     padding: 0 20px 20px;
+    p {
+      margin-top: 80px;
+    }
   }
 }
 
@@ -77,27 +83,17 @@ html, body {
   @include transition(all .4s);
 
   #slides {
-    height: 100%;
     overflow: hidden;
     .slide {
-      background: url(../images/TWR-worship-bg.png) bottom center no-repeat;
       float: left;
       // @include background-image(radial-gradient(#FFFFFF, #D6F5FF));
-      height: 100%;
+      width: 100%;
       .inner {
         position: relative;
         // padding: 20px;
-        img.bg {
-          margin: 0 auto;
-          height: auto;
-          position: absolute;
-        }
-        img.text {
-          position: absolute;
-          max-width: 140px;
-          margin: 0 auto;
-          top: 20px;
-          z-index:10;
+        width: 100%;
+        img.streamBanner {
+          width: 100%;
         }
       }
     }
@@ -137,7 +133,8 @@ body.active-menu #contentWrapper {
     font-size: 90%;
   }
 }
-div.menubutton {
+.menubutton,
+#closeInfo {
   display: inline-block;
   height: 30px;
   width: 49px;
@@ -154,7 +151,7 @@ div.menubutton {
   color: #666666;
   li {
       a {
-        padding: 20px 25% 10px 10%;
+        padding: 15px 25% 15px 10%;
         color: #666666;
         text-decoration: none;
         display: block;
@@ -169,6 +166,10 @@ div.menubutton {
     }
     .streamName {
       font-weight: bold;
+      display: block;
+    }
+    .description {
+      display: block;
     }
   }
 }

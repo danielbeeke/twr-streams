@@ -7,7 +7,8 @@
       "streamLogo"        : "TWR-WP",
       "streamDescTeaser"  : "Luister 24 uur per dag naar de mooiste gospelmuziek.",
       "streamDescFull"    : "Via TWR Worship en Praise kunt u 24 uur per dag luisteren naar de mooiste gospelmuziek via internet.",
-      "streamSocial"      : "http://luister.transworldradio.nl/twr-worship-en-praise"
+      "streamSocial"      : "http://luister.transworldradio.nl/twr-worship-en-praise",
+      "streamBanner"      : "TWR-worship-bg.jpg"
     },
     {
       "streamName"        : "TWR Richt je hart op God",
@@ -16,8 +17,8 @@
       "streamUrlAac"      : "http://www.yourmuze.com/desktop/twr-stream/twrvooru.m3u",
       "streamLogo"        : "TWR-R",
       "streamDescTeaser"  : "Laat u bemoedigen in uw dagelijks leven met God.",
-      "streamDescFull"    : "Deze stream is bedoeld om u geestelijk op te bouwen en te bemoedigen in uw dagelijks leven met God. Neem <a href='mailto:info@tijmenonline.nl'>contact</a> op",
-      "streamSocial"      : "http://luister.transworldradio.nl/twr-richt-je-hart-op-god"
+      "streamSocial"      : "http://luister.transworldradio.nl/twr-richt-je-hart-op-god",
+      "streamBanner"      : "TWR-richt-bg.jpg"
     }
   ]
 }
