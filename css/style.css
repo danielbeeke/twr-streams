@@ -207,14 +207,25 @@ body.active-menu #contentWrapper {
   left: 10px;
 }
 
-/* line 168, ../sass/style.scss */
+/* line 167, ../sass/style.scss */
+.contactButton {
+  display: inline-block;
+  height: 30px;
+  width: 49px;
+  background: url("../images/button-mail.png");
+  position: absolute;
+  top: 30px;
+  right: 10px;
+}
+
+/* line 176, ../sass/style.scss */
 #appMenu {
   padding: 0 0 10%;
   list-style: none;
   font-size: 90%;
   color: #666666;
 }
-/* line 173, ../sass/style.scss */
+/* line 181, ../sass/style.scss */
 #appMenu li {
   border-bottom: 1px solid #d9d9d9;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #f3f3f3));
@@ -223,45 +234,45 @@ body.active-menu #contentWrapper {
   background-image: -o-linear-gradient(#ffffff, #f3f3f3);
   background-image: linear-gradient(#ffffff, #f3f3f3);
 }
-/* line 174, ../sass/style.scss */
+/* line 182, ../sass/style.scss */
 #appMenu li a {
   padding: 15px 35% 15px 10%;
   color: #666666;
   text-decoration: none;
   display: block;
 }
-/* line 182, ../sass/style.scss */
+/* line 190, ../sass/style.scss */
 #appMenu li:first-child {
   border-top: 1px solid #d9d9d9;
 }
-/* line 185, ../sass/style.scss */
+/* line 193, ../sass/style.scss */
 #appMenu li:last-child {
   margin-bottom: 0;
 }
-/* line 188, ../sass/style.scss */
+/* line 196, ../sass/style.scss */
 #appMenu li .streamName {
   font-weight: bold;
   display: block;
 }
-/* line 192, ../sass/style.scss */
+/* line 200, ../sass/style.scss */
 #appMenu li .description {
   display: block;
 }
-/* line 195, ../sass/style.scss */
+/* line 203, ../sass/style.scss */
 #appMenu li #showInfo {
   background: url("../images/but-info.png") no-repeat 75% center;
 }
 
-/* line 200, ../sass/style.scss */
+/* line 208, ../sass/style.scss */
 .stream-button {
   background: url("../images/but-play.png") no-repeat 75% center;
 }
 
-/* line 203, ../sass/style.scss */
+/* line 211, ../sass/style.scss */
 #player {
   z-index: 10;
 }
-/* line 205, ../sass/style.scss */
+/* line 213, ../sass/style.scss */
 #player #playerControls {
   position: absolute;
   bottom: 0;
@@ -274,7 +285,7 @@ body.active-menu #contentWrapper {
   width: 100%;
   z-index: 10;
 }
-/* line 212, ../sass/style.scss */
+/* line 220, ../sass/style.scss */
 #player #playerControls #playStream {
   background: url("../images/play-button.png") no-repeat;
   width: 30px;
@@ -282,7 +293,7 @@ body.active-menu #contentWrapper {
   display: block;
   margin: 7px auto;
 }
-/* line 219, ../sass/style.scss */
+/* line 227, ../sass/style.scss */
 #player #playerControls #stopStream {
   background: url("../images/stop-button.png") no-repeat;
   width: 30px;
@@ -291,12 +302,12 @@ body.active-menu #contentWrapper {
   margin: 7px auto;
 }
 
-/* line 228, ../sass/style.scss */
+/* line 236, ../sass/style.scss */
 .hidden {
   display: none !important;
 }
 
-/* line 231, ../sass/style.scss */
+/* line 239, ../sass/style.scss */
 nav#pager {
   position: absolute;
   bottom: 85px;
@@ -310,7 +321,7 @@ nav#pager {
   background-image: linear-gradient(#999999, #656565);
   width: 100%;
 }
-/* line 240, ../sass/style.scss */
+/* line 248, ../sass/style.scss */
 nav#pager ul#position {
   margin: 0 auto;
   position: relative;
@@ -320,7 +331,7 @@ nav#pager ul#position {
   text-align: center;
   line-height: 0;
 }
-/* line 249, ../sass/style.scss */
+/* line 257, ../sass/style.scss */
 nav#pager ul#position li {
   display: inline-block;
   height: 8px;
@@ -333,7 +344,7 @@ nav#pager ul#position li {
   -moz-border-radius: 4px / 4px;
   border-radius: 4px / 4px;
 }
-/* line 259, ../sass/style.scss */
+/* line 267, ../sass/style.scss */
 nav#pager ul#position li.on {
   background-color: #0099ff;
 }

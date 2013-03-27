@@ -164,7 +164,15 @@ body.active-menu #contentWrapper {
   top: 30px;
   left: 10px;
 }
-
+.contactButton {
+  display: inline-block;
+  height: 30px;
+  width: 49px;
+  background: url('../images/button-mail.png');
+  position: absolute;
+  top: 30px;
+  right: 10px;
+}
 #appMenu {
   padding: 0 0 10%;
   list-style: none;
