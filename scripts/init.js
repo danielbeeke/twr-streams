@@ -3,7 +3,8 @@ $.fn.twrFunctions = {};
 $.fn.twrCallFunctions = {};
 
 // Adding a class to the body so we can theme specific for each phone type.
-$.fn.twrCallFunctions.deviceType = (navigator.userAgent.match(/iPad/i))  == "iPad" ? "iPad" : (navigator.userAgent.match(/iPhone/i))  == "iPhone" ? "iPhone" : (navigator.userAgent.match(/Android/i)) == "Android" ? "Android" : (navigator.userAgent.match(/BlackBerry/i)) == "BlackBerry" ? "BlackBerry" : "null";
+// $.fn.twrCallFunctions.deviceType = (navigator.userAgent.match(/iPad/i))  == "iPad" ? "iPad" : (navigator.userAgent.match(/iPhone/i))  == "iPhone" ? "iPhone" : (navigator.userAgent.match(/Android/i)) == "Android" ? "Android" : (navigator.userAgent.match(/BlackBerry/i)) == "BlackBerry" ? "BlackBerry" : "null";
+$.fn.twrCallFunctions.deviceType = 'Android';
 $('body').addClass($.fn.twrCallFunctions.deviceType);
 
 (function ($) {
