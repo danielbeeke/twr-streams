@@ -85,5 +85,21 @@
     }
   };
 
+  $.fn.twrCallFunctions.setAndroidPager = function(){
+    pagerLength = $.fn.twrCallFunctions.data.streams.length;
+    pagerWidth = 100 / pagerLength;
+    $.each($('#position li'), function(){
+      $(this).css("width", pagerWidth + '%');
+    });
+  }
+
+  $.fn.twrFunctions.setAndroidPagerInit = {
+    attach: function () {
+      if($.fn.twrCallFunctions.devicePlatform == 'Android'){
+        $.fn.twrCallFunctions.setAndroidPager();
+      }
+    }
+  }
+
 
 })(jQuery);

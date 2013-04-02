@@ -25,7 +25,6 @@
 
 })(jQuery);
 
-
   function ymReceiveMetaData(data) {
         $('#nowPlaying').html(data.now_playing);
   }

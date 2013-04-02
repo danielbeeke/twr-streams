@@ -6,6 +6,9 @@
 @import "compass/css3/user-interface";
 @import "compass/css3/opacity";
 
+$adBlue : #6CB3E6;
+$adBlueLight : #78b5f2;
+
 /* Reset */
 html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, del, dfn, em, img, ins, kbd, q, samp, small, strong, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, table, tbody, tfoot, thead, tr, th, td, article, aside, footer, header, nav, section {
   margin:0;
@@ -23,8 +26,10 @@ body {
   font-family:sans-serif;
   margin: 0;
   padding: 0;
-  font-family: helvetica;
   @include user-select(none);
+}
+.iOS {
+  font-family: helvetica;
 }
 .bold {
   font-weight: bold;
@@ -38,8 +43,6 @@ a {
   z-index: 1000;
   position: relative;
 }
-
-
 
 #wrapper,
 html, body {
@@ -139,12 +142,11 @@ body.active-menu #contentWrapper {
 #streamLogo div {
   width: 90px;
 }
+
+// ---------- streamInfo ----------
+
 #streamInfo {
-  background-color: #1e1e1e;
-  min-height: 60px;
-  color: #ffffff;
   padding: 5px 20px;
-  text-align: center;
   #streamName {
     font-weight: bold;
     display: block;
@@ -154,41 +156,92 @@ body.active-menu #contentWrapper {
     font-size: 90%;
   }
 }
+.iOS {
+  #streamInfo {
+    background-color: #1e1e1e;
+    color: #ffffff;
+    text-align: center;
+    min-height: 60px;
+  }
+}
+.Android {
+  #streamInfo {
+    background-color: #ffffff;
+    min-height: 70px;
+    #streamName {
+      color: $adBlue;
+      padding: 2px 5px 3px;
+      border-bottom: 3px solid $adBlue;
+    }
+    #nowPlaying {
+      margin-top: 5px;
+
+    }
+  }
+}
+
+// ---------- menubutton ----------
+
 .menubutton,
 #closeInfo {
   display: inline-block;
-  height: 30px;
-  width: 49px;
-  background: url('../images/button-menu.png');
   position: absolute;
-  top: 30px;
   left: 10px;
 }
+
+.iOS {
+  .menubutton,
+  #closeInfo {
+    height: 30px;
+    width: 49px;
+    background: url('../images/button-menu.png');
+    top: 30px;
+  }
+}
+.Android {
+  .menubutton,
+  #closeInfo {
+    height: 55px;
+    width: 39px;
+    background: url('../images/android/menu.png');
+    top: 8px;
+  }
+}
+
+// ---------- contactbutton ----------
 .contactButton {
   display: inline-block;
-  height: 30px;
-  width: 49px;
-  background: url('../images/button-mail.png');
   position: absolute;
-  top: 30px;
   right: 10px;
 }
+.iOS {
+  .contactButton {
+    background: url('../images/button-mail.png');
+    height: 30px;
+    width: 49px;
+    top: 30px;
+  }
+}
+.Android {
+  .contactButton {
+    background: url('../images/android/contact.png');
+    height: 55px;
+    width: 43px;
+    top: 8px;
+  }
+}
+// ---------- appMenu ----------
+
 #appMenu {
   padding: 0 0 10%;
   list-style: none;
   font-size: 90%;
   color: #666666;
   li {
-      a {
-        padding: 15px 35% 15px 10%;
-        color: #666666;
-        text-decoration: none;
-        display: block;
-      }
-    border-bottom: 1px solid #d9d9d9;
-    @include background-image(linear-gradient(#ffffff, #f3f3f3));
-    &:first-child {
-      border-top: 1px solid #d9d9d9;
+    a {
+      color: #666666;
+      text-decoration: none;
+      display: block;
     }
     &:last-child {
       margin-bottom: 0;
@@ -200,72 +253,185 @@ body.active-menu #contentWrapper {
     .description {
       display: block;
     }
-    #showInfo {
-      background: url('../images/but-info.png') no-repeat 75% center;
+  }
+}
+
+.iOS {
+  #appMenu {
+    li {
+      @include background-image(linear-gradient(#ffffff, #f3f3f3));
+      border-bottom: 1px solid #d9d9d9;
+      a {
+        padding: 15px 35% 15px 10%;
+      }
+      &:first-child {
+        border-top: 1px solid #d9d9d9;
+      }
+      #showInfo {
+        background: url('../images/but-info.png') no-repeat 75% center;
+      }
+    }
+    .stream-button {
+      background: url('../images/but-play.png') no-repeat 75% center;
     }
   }
 }
-.stream-button {
-  background: url('../images/but-play.png') no-repeat 75% center;
+.Android {
+  #appMenu {
+    li {
+      border-top: 3px solid $adBlue;
+      margin: 0 20% 0 5% ;
+      a {
+        padding: 15px 5% 45px;
+      }
+      &:first-child {
+        margin-top: 20px;
+      }
+      #showInfo {
+        background: url('../images/android/info.png') no-repeat 88% center;
+      }
+    }
+    .stream-button {
+      background: url('../images/android/menuPlay.png') no-repeat 95% 95%;
+    }
+  }
 }
+
+// ---------- player ----------
+
 #player {
   z-index: 10;
   #playerControls {
     position: absolute;
     bottom: 0;
-    height: 85px;
-    @include background-image(linear-gradient(bottom, #000000 0%, #000000 50%, #424242 51%, #8d8d8d 100%));
     width: 100%;
     z-index: 10;
     #playStream {
-      background: url('../images/play-button.png') no-repeat;
-      width: 30px;
-      height: 28px;
       display: block;
       margin: 7px auto;
     }
     #stopStream {
-      background: url('../images/stop-button.png') no-repeat;
-      width: 30px;
-      height: 28px;
       display: block;
       margin: 7px auto;
+    }
+  }
+}
+.iOS {
+  #player {
+    #playerControls {
+      height: 85px;
+      @include background-image(linear-gradient(bottom, #000000 0%, #000000 50%, #424242 51%, #8d8d8d 100%));
+      #playStream {
+        background: url('../images/play-button.png') no-repeat;
+        width: 30px;
+        height: 28px;
+      }
+      #stopStream {
+        background: url('../images/stop-button.png') no-repeat;
+        width: 30px;
+        height: 28px;
+      }
+    }
+  }
+}
+.Android {
+  #player {
+    #playerControls {
+      height: 90px;
+      background-color: #000000;
+      #playStream {
+        background: url('../images/android/play.png') no-repeat;
+        width: 65px;
+        height: 30px;
+      }
+      #stopStream {
+        background: url('../images/android/stop.png') no-repeat;
+        width: 65px;
+        height: 30px;
+      }
     }
   }
 }
 .hidden {
   display: none !important;
 }
+
+// ---------- pager ----------
+
 nav#pager {
   position: absolute;
-  bottom: 85px;
-  height: 8px;
-  padding: 4px 0;
-  background: #333333;
-  @include background-image(linear-gradient(#999999, #656565));
   width: 100%;
+  z-index: 12;
 
   ul#position {
-    margin: 0 auto;
     position: relative;
     display: block;
     padding: 0;
     float: none;
     text-align: center;
     line-height: 0;
-
     li {
       display: inline-block;
       height: 8px;
       width: 8px;
       padding: 0;
-      margin: 0 3px;
       background-color:#cccccc;
       position: relative;
-      @include border-radius(4px, 4px);
     }
     li.on {
       background-color: #0099ff;
+    }
+  }
+}
+.iOS {
+  nav#pager {
+    @include background-image(linear-gradient(#999999, #656565));
+    height: 8px;
+    padding: 4px 0;
+    bottom: 85px;
+    ul#position {
+      margin: 0 auto;
+      li {
+        display: inline-block;
+        height: 8px;
+        width: 8px;
+        padding: 0;
+        margin: 0 3px;
+        background-color:#cccccc;
+        position: relative;
+        @include border-radius(4px, 4px);
+      }
+      li.on {
+        background-color: #0099ff;
+      }
+    }
+  }
+}
+
+.Android {
+  nav#pager {
+    background-color: #656565;
+    height: 4px;
+    bottom: 90px;
+    ul#position {
+      margin: 0 auto;
+      li {
+        display: inline-block;
+        height: 1px;
+        width: 8px;
+        padding: 0;
+        margin: 0;
+        border-top: 3px #ffffff solid;
+        background-color:$adBlueLight;
+        position: relative;
+        float: left;
+      }
+      li.on {
+        background-color: $adBlue;
+        height: 4px;
+        border-top: 0;
+        margin: 0;
+      }
     }
   }
 }

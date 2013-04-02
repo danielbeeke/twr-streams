@@ -1,5 +1,5 @@
 /* Reset */
-/* line 10, ../sass/style.scss */
+/* line 13, ../sass/style.scss */
 html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, del, dfn, em, img, ins, kbd, q, samp, small, strong, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, table, tbody, tfoot, thead, tr, th, td, article, aside, footer, header, nav, section {
   margin: 0;
   padding: 0;
@@ -10,37 +10,41 @@ html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, del, dfn, em, 
   background: transparent;
 }
 
-/* line 20, ../sass/style.scss */
+/* line 23, ../sass/style.scss */
 body {
   -webkit-text-size-adjust: none;
   -webkit-touch-callout: none;
   font-family: sans-serif;
   margin: 0;
   padding: 0;
-  font-family: helvetica;
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
 }
 
-/* line 29, ../sass/style.scss */
+/* line 31, ../sass/style.scss */
+.iOS {
+  font-family: helvetica;
+}
+
+/* line 34, ../sass/style.scss */
 .bold {
   font-weight: bold;
 }
 
-/* line 32, ../sass/style.scss */
+/* line 37, ../sass/style.scss */
 a {
   color: #00B4F1;
   text-decoration: none;
 }
 
-/* line 37, ../sass/style.scss */
+/* line 42, ../sass/style.scss */
 .header {
   z-index: 1000;
   position: relative;
 }
 
-/* line 45, ../sass/style.scss */
+/* line 48, ../sass/style.scss */
 #wrapper,
 html, body {
   position: absolute;
@@ -50,14 +54,14 @@ html, body {
   overflow: hidden;
 }
 
-/* line 53, ../sass/style.scss */
+/* line 56, ../sass/style.scss */
 #menuWrapper {
   background: white;
   width: 100%;
   height: 100%;
 }
 
-/* line 59, ../sass/style.scss */
+/* line 62, ../sass/style.scss */
 #infoPage {
   -webkit-transition: all 0.6s;
   -moz-transition: all 0.6s;
@@ -78,38 +82,38 @@ html, body {
   background-image: -o-radial-gradient(#ffffff, #d6f5ff);
   background-image: radial-gradient(#ffffff, #d6f5ff);
 }
-/* line 70, ../sass/style.scss */
+/* line 73, ../sass/style.scss */
 #infoPage .inner {
   padding: 0 20px 20px;
 }
-/* line 72, ../sass/style.scss */
+/* line 75, ../sass/style.scss */
 #infoPage .inner p {
   margin-top: 15px;
   margin-bottom: 5px;
 }
-/* line 76, ../sass/style.scss */
+/* line 79, ../sass/style.scss */
 #infoPage .inner .label {
   font-weight: bold;
 }
-/* line 79, ../sass/style.scss */
+/* line 82, ../sass/style.scss */
 #infoPage .inner p.first {
   margin-top: 80px;
 }
-/* line 82, ../sass/style.scss */
+/* line 85, ../sass/style.scss */
 #infoPage .inner ul {
   list-style: none;
   margin-top: 15px;
   margin-bottom: 5px;
 }
 
-/* line 91, ../sass/style.scss */
+/* line 94, ../sass/style.scss */
 #infoPage.invisible {
   z-index: -10;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
 }
 
-/* line 96, ../sass/style.scss */
+/* line 99, ../sass/style.scss */
 #contentWrapper {
   -webkit-box-shadow: -3px 0px 8px 2px #929292;
   -moz-box-shadow: -3px 0px 8px 2px #929292;
@@ -126,25 +130,25 @@ html, body {
   -o-transition: all 0.4s;
   transition: all 0.4s;
 }
-/* line 107, ../sass/style.scss */
+/* line 110, ../sass/style.scss */
 #contentWrapper #slides {
   overflow: hidden;
   z-index: 5;
   position: relative;
 }
-/* line 111, ../sass/style.scss */
+/* line 114, ../sass/style.scss */
 #contentWrapper #slides .slide {
   float: left;
   width: 100%;
 }
-/* line 115, ../sass/style.scss */
+/* line 118, ../sass/style.scss */
 #contentWrapper #slides .slide img.streamBanner {
   max-width: 100%;
   position: absolute;
   bottom: 0;
 }
 
-/* line 124, ../sass/style.scss */
+/* line 127, ../sass/style.scss */
 body.active-menu #contentWrapper {
   -webkit-transform: translate3d(85%, 0, 0);
   -moz-transform: translate3d(85%, 0, 0);
@@ -153,7 +157,7 @@ body.active-menu #contentWrapper {
   transform: translate3d(85%, 0, 0);
 }
 
-/* line 128, ../sass/style.scss */
+/* line 131, ../sass/style.scss */
 #menuBar, #logoBar {
   background-image: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 100, color-stop(0%, #ffffff), color-stop(100%, #d6f5ff));
   background-image: -webkit-radial-gradient(#ffffff, #d6f5ff);
@@ -163,7 +167,7 @@ body.active-menu #contentWrapper {
   height: 74px;
 }
 
-/* line 134, ../sass/style.scss */
+/* line 137, ../sass/style.scss */
 #streamLogo div,
 .menuLogo {
   margin: 0 auto;
@@ -171,159 +175,249 @@ body.active-menu #contentWrapper {
   display: block;
 }
 
-/* line 139, ../sass/style.scss */
+/* line 142, ../sass/style.scss */
 #streamLogo div {
   width: 90px;
 }
 
-/* line 142, ../sass/style.scss */
-#streamInfo {
-  background-color: #1e1e1e;
-  min-height: 60px;
-  color: #ffffff;
-  padding: 5px 20px;
-  text-align: center;
-}
 /* line 148, ../sass/style.scss */
+#streamInfo {
+  padding: 5px 20px;
+}
+/* line 150, ../sass/style.scss */
 #streamInfo #streamName {
   font-weight: bold;
   display: block;
 }
-/* line 152, ../sass/style.scss */
+/* line 154, ../sass/style.scss */
 #streamInfo #nowPlaying {
   display: block;
   font-size: 90%;
 }
 
-/* line 158, ../sass/style.scss */
+/* line 160, ../sass/style.scss */
+.iOS #streamInfo {
+  background-color: #1e1e1e;
+  color: #ffffff;
+  text-align: center;
+  min-height: 60px;
+}
+
+/* line 168, ../sass/style.scss */
+.Android #streamInfo {
+  background-color: #ffffff;
+  min-height: 70px;
+}
+/* line 171, ../sass/style.scss */
+.Android #streamInfo #streamName {
+  color: #6cb3e6;
+  padding: 2px 5px 3px;
+  border-bottom: 3px solid #6cb3e6;
+}
+/* line 176, ../sass/style.scss */
+.Android #streamInfo #nowPlaying {
+  margin-top: 5px;
+}
+
+/* line 186, ../sass/style.scss */
 .menubutton,
 #closeInfo {
   display: inline-block;
-  height: 30px;
-  width: 49px;
-  background: url("../images/button-menu.png");
   position: absolute;
-  top: 30px;
   left: 10px;
 }
 
-/* line 167, ../sass/style.scss */
-.contactButton {
-  display: inline-block;
+/* line 194, ../sass/style.scss */
+.iOS .menubutton,
+.iOS #closeInfo {
   height: 30px;
   width: 49px;
-  background: url("../images/button-mail.png");
-  position: absolute;
+  background: url("../images/button-menu.png");
   top: 30px;
+}
+
+/* line 203, ../sass/style.scss */
+.Android .menubutton,
+.Android #closeInfo {
+  height: 55px;
+  width: 39px;
+  background: url("../images/android/menu.png");
+  top: 8px;
+}
+
+/* line 212, ../sass/style.scss */
+.contactButton {
+  display: inline-block;
+  position: absolute;
   right: 10px;
 }
 
-/* line 176, ../sass/style.scss */
+/* line 218, ../sass/style.scss */
+.iOS .contactButton {
+  background: url("../images/button-mail.png");
+  height: 30px;
+  width: 49px;
+  top: 30px;
+}
+
+/* line 226, ../sass/style.scss */
+.Android .contactButton {
+  background: url("../images/android/contact.png");
+  height: 55px;
+  width: 43px;
+  top: 8px;
+}
+
+/* line 235, ../sass/style.scss */
 #appMenu {
   padding: 0 0 10%;
   list-style: none;
   font-size: 90%;
   color: #666666;
 }
-/* line 181, ../sass/style.scss */
-#appMenu li {
-  border-bottom: 1px solid #d9d9d9;
+/* line 241, ../sass/style.scss */
+#appMenu li a {
+  color: #666666;
+  text-decoration: none;
+  display: block;
+}
+/* line 246, ../sass/style.scss */
+#appMenu li:last-child {
+  margin-bottom: 0;
+}
+/* line 249, ../sass/style.scss */
+#appMenu li .streamName {
+  font-weight: bold;
+  display: block;
+}
+/* line 253, ../sass/style.scss */
+#appMenu li .description {
+  display: block;
+}
+
+/* line 261, ../sass/style.scss */
+.iOS #appMenu li {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #f3f3f3));
   background-image: -webkit-linear-gradient(#ffffff, #f3f3f3);
   background-image: -moz-linear-gradient(#ffffff, #f3f3f3);
   background-image: -o-linear-gradient(#ffffff, #f3f3f3);
   background-image: linear-gradient(#ffffff, #f3f3f3);
+  border-bottom: 1px solid #d9d9d9;
 }
-/* line 182, ../sass/style.scss */
-#appMenu li a {
+/* line 264, ../sass/style.scss */
+.iOS #appMenu li a {
   padding: 15px 35% 15px 10%;
-  color: #666666;
-  text-decoration: none;
-  display: block;
 }
-/* line 190, ../sass/style.scss */
-#appMenu li:first-child {
+/* line 267, ../sass/style.scss */
+.iOS #appMenu li:first-child {
   border-top: 1px solid #d9d9d9;
 }
-/* line 193, ../sass/style.scss */
-#appMenu li:last-child {
-  margin-bottom: 0;
-}
-/* line 196, ../sass/style.scss */
-#appMenu li .streamName {
-  font-weight: bold;
-  display: block;
-}
-/* line 200, ../sass/style.scss */
-#appMenu li .description {
-  display: block;
-}
-/* line 203, ../sass/style.scss */
-#appMenu li #showInfo {
+/* line 270, ../sass/style.scss */
+.iOS #appMenu li #showInfo {
   background: url("../images/but-info.png") no-repeat 75% center;
 }
-
-/* line 208, ../sass/style.scss */
-.stream-button {
+/* line 274, ../sass/style.scss */
+.iOS #appMenu .stream-button {
   background: url("../images/but-play.png") no-repeat 75% center;
 }
 
-/* line 211, ../sass/style.scss */
+/* line 281, ../sass/style.scss */
+.Android #appMenu li {
+  border-top: 3px solid #6cb3e6;
+  margin: 0 20% 0 5%;
+}
+/* line 284, ../sass/style.scss */
+.Android #appMenu li a {
+  padding: 15px 5% 45px;
+}
+/* line 287, ../sass/style.scss */
+.Android #appMenu li:first-child {
+  margin-top: 20px;
+}
+/* line 290, ../sass/style.scss */
+.Android #appMenu li #showInfo {
+  background: url("../images/android/info.png") no-repeat 88% center;
+}
+/* line 294, ../sass/style.scss */
+.Android #appMenu .stream-button {
+  background: url("../images/android/menuPlay.png") no-repeat 95% 95%;
+}
+
+/* line 302, ../sass/style.scss */
 #player {
   z-index: 10;
 }
-/* line 213, ../sass/style.scss */
+/* line 304, ../sass/style.scss */
 #player #playerControls {
   position: absolute;
   bottom: 0;
+  width: 100%;
+  z-index: 10;
+}
+/* line 309, ../sass/style.scss */
+#player #playerControls #playStream {
+  display: block;
+  margin: 7px auto;
+}
+/* line 313, ../sass/style.scss */
+#player #playerControls #stopStream {
+  display: block;
+  margin: 7px auto;
+}
+
+/* line 321, ../sass/style.scss */
+.iOS #player #playerControls {
   height: 85px;
   background-image: -webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(0%, #000000), color-stop(50%, #000000), color-stop(51%, #424242), color-stop(100%, #8d8d8d));
   background-image: -webkit-linear-gradient(bottom, #000000 0%, #000000 50%, #424242 51%, #8d8d8d 100%);
   background-image: -moz-linear-gradient(bottom, #000000 0%, #000000 50%, #424242 51%, #8d8d8d 100%);
   background-image: -o-linear-gradient(bottom, #000000 0%, #000000 50%, #424242 51%, #8d8d8d 100%);
   background-image: linear-gradient(bottom, #000000 0%, #000000 50%, #424242 51%, #8d8d8d 100%);
-  width: 100%;
-  z-index: 10;
 }
-/* line 220, ../sass/style.scss */
-#player #playerControls #playStream {
+/* line 324, ../sass/style.scss */
+.iOS #player #playerControls #playStream {
   background: url("../images/play-button.png") no-repeat;
   width: 30px;
   height: 28px;
-  display: block;
-  margin: 7px auto;
 }
-/* line 227, ../sass/style.scss */
-#player #playerControls #stopStream {
+/* line 329, ../sass/style.scss */
+.iOS #player #playerControls #stopStream {
   background: url("../images/stop-button.png") no-repeat;
   width: 30px;
   height: 28px;
-  display: block;
-  margin: 7px auto;
 }
 
-/* line 236, ../sass/style.scss */
+/* line 339, ../sass/style.scss */
+.Android #player #playerControls {
+  height: 90px;
+  background-color: #000000;
+}
+/* line 342, ../sass/style.scss */
+.Android #player #playerControls #playStream {
+  background: url("../images/android/play.png") no-repeat;
+  width: 65px;
+  height: 30px;
+}
+/* line 347, ../sass/style.scss */
+.Android #player #playerControls #stopStream {
+  background: url("../images/android/stop.png") no-repeat;
+  width: 65px;
+  height: 30px;
+}
+
+/* line 355, ../sass/style.scss */
 .hidden {
   display: none !important;
 }
 
-/* line 239, ../sass/style.scss */
+/* line 361, ../sass/style.scss */
 nav#pager {
   position: absolute;
-  bottom: 85px;
-  height: 8px;
-  padding: 4px 0;
-  background: #333333;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #999999), color-stop(100%, #656565));
-  background-image: -webkit-linear-gradient(#999999, #656565);
-  background-image: -moz-linear-gradient(#999999, #656565);
-  background-image: -o-linear-gradient(#999999, #656565);
-  background-image: linear-gradient(#999999, #656565);
   width: 100%;
+  z-index: 12;
 }
-/* line 248, ../sass/style.scss */
+/* line 366, ../sass/style.scss */
 nav#pager ul#position {
-  margin: 0 auto;
   position: relative;
   display: block;
   padding: 0;
@@ -331,8 +425,37 @@ nav#pager ul#position {
   text-align: center;
   line-height: 0;
 }
-/* line 257, ../sass/style.scss */
+/* line 373, ../sass/style.scss */
 nav#pager ul#position li {
+  display: inline-block;
+  height: 8px;
+  width: 8px;
+  padding: 0;
+  background-color: #cccccc;
+  position: relative;
+}
+/* line 381, ../sass/style.scss */
+nav#pager ul#position li.on {
+  background-color: #0099ff;
+}
+
+/* line 387, ../sass/style.scss */
+.iOS nav#pager {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #999999), color-stop(100%, #656565));
+  background-image: -webkit-linear-gradient(#999999, #656565);
+  background-image: -moz-linear-gradient(#999999, #656565);
+  background-image: -o-linear-gradient(#999999, #656565);
+  background-image: linear-gradient(#999999, #656565);
+  height: 8px;
+  padding: 4px 0;
+  bottom: 85px;
+}
+/* line 392, ../sass/style.scss */
+.iOS nav#pager ul#position {
+  margin: 0 auto;
+}
+/* line 394, ../sass/style.scss */
+.iOS nav#pager ul#position li {
   display: inline-block;
   height: 8px;
   width: 8px;
@@ -344,7 +467,37 @@ nav#pager ul#position li {
   -moz-border-radius: 4px / 4px;
   border-radius: 4px / 4px;
 }
-/* line 267, ../sass/style.scss */
-nav#pager ul#position li.on {
+/* line 404, ../sass/style.scss */
+.iOS nav#pager ul#position li.on {
   background-color: #0099ff;
+}
+
+/* line 412, ../sass/style.scss */
+.Android nav#pager {
+  background-color: #656565;
+  height: 4px;
+  bottom: 90px;
+}
+/* line 416, ../sass/style.scss */
+.Android nav#pager ul#position {
+  margin: 0 auto;
+}
+/* line 418, ../sass/style.scss */
+.Android nav#pager ul#position li {
+  display: inline-block;
+  height: 1px;
+  width: 8px;
+  padding: 0;
+  margin: 0;
+  border-top: 3px white solid;
+  background-color: #78b5f2;
+  position: relative;
+  float: left;
+}
+/* line 429, ../sass/style.scss */
+.Android nav#pager ul#position li.on {
+  background-color: #6cb3e6;
+  height: 4px;
+  border-top: 0;
+  margin: 0;
 }
