@@ -12,6 +12,7 @@ $.fn.twrCallFunctions = {};
   function onDeviceReady(){
 
     $.fn.twrCallFunctions.devicePlatform = device.platform;
+    alert('test' + device.platform);
     //$.fn.twrCallFunctions.devicePlatform = 'Android'; // Voor ontwikkeling!
     $('body').addClass($.fn.twrCallFunctions.devicePlatform);
 
