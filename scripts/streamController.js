@@ -38,8 +38,8 @@
       $.fn.currentStream.streamUrl = $.fn.currentStream.streamUrlMp3;
       break;
 
-      deafult:
-      $.fn.currentStream.streamUrl = $.fn.currentStream.streamUrlAac;
+      default:
+      $.fn.currentStream.streamUrl = $.fn.currentStream.streamUrlMp3;
     }
 
     $.fn.player.setAttribute('src', $.fn.currentStream.streamUrl);
