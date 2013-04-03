@@ -17,34 +17,35 @@ body {
   font-family: sans-serif;
   margin: 0;
   padding: 0;
+  min-height: 100px;
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
 }
 
-/* line 31, ../sass/style.scss */
+/* line 32, ../sass/style.scss */
 .iOS {
   font-family: helvetica;
 }
 
-/* line 34, ../sass/style.scss */
+/* line 35, ../sass/style.scss */
 .bold {
   font-weight: bold;
 }
 
-/* line 37, ../sass/style.scss */
+/* line 38, ../sass/style.scss */
 a {
   color: #00B4F1;
   text-decoration: none;
 }
 
-/* line 42, ../sass/style.scss */
-.header {
-  z-index: 1000;
+/* line 43, ../sass/style.scss */
+#header {
+  z-index: 10;
   position: relative;
 }
 
-/* line 48, ../sass/style.scss */
+/* line 49, ../sass/style.scss */
 #wrapper,
 html, body {
   position: absolute;
@@ -54,14 +55,14 @@ html, body {
   overflow: hidden;
 }
 
-/* line 56, ../sass/style.scss */
+/* line 57, ../sass/style.scss */
 #menuWrapper {
   background: white;
   width: 100%;
   height: 100%;
 }
 
-/* line 62, ../sass/style.scss */
+/* line 63, ../sass/style.scss */
 #infoPage {
   -webkit-transition: all 0.6s;
   -moz-transition: all 0.6s;
@@ -82,38 +83,38 @@ html, body {
   background-image: -o-radial-gradient(#ffffff, #d6f5ff);
   background-image: radial-gradient(#ffffff, #d6f5ff);
 }
-/* line 73, ../sass/style.scss */
+/* line 74, ../sass/style.scss */
 #infoPage .inner {
   padding: 0 20px 20px;
 }
-/* line 75, ../sass/style.scss */
+/* line 76, ../sass/style.scss */
 #infoPage .inner p {
   margin-top: 15px;
   margin-bottom: 5px;
 }
-/* line 79, ../sass/style.scss */
+/* line 80, ../sass/style.scss */
 #infoPage .inner .label {
   font-weight: bold;
 }
-/* line 82, ../sass/style.scss */
+/* line 83, ../sass/style.scss */
 #infoPage .inner p.first {
   margin-top: 80px;
 }
-/* line 85, ../sass/style.scss */
+/* line 86, ../sass/style.scss */
 #infoPage .inner ul {
   list-style: none;
   margin-top: 15px;
   margin-bottom: 5px;
 }
 
-/* line 94, ../sass/style.scss */
+/* line 95, ../sass/style.scss */
 #infoPage.invisible {
   z-index: -10;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
 }
 
-/* line 99, ../sass/style.scss */
+/* line 100, ../sass/style.scss */
 #contentWrapper {
   -webkit-box-shadow: -3px 0px 8px 2px #929292;
   -moz-box-shadow: -3px 0px 8px 2px #929292;
@@ -130,25 +131,27 @@ html, body {
   -o-transition: all 0.4s;
   transition: all 0.4s;
 }
-/* line 110, ../sass/style.scss */
+/* line 111, ../sass/style.scss */
 #contentWrapper #slides {
   overflow: hidden;
   z-index: 5;
   position: relative;
 }
-/* line 114, ../sass/style.scss */
+/* line 115, ../sass/style.scss */
 #contentWrapper #slides .slide {
   float: left;
   width: 100%;
+  z-index: 5;
 }
-/* line 118, ../sass/style.scss */
+/* line 120, ../sass/style.scss */
 #contentWrapper #slides .slide img.streamBanner {
   max-width: 100%;
   position: absolute;
   bottom: 0;
+  z-index: 5;
 }
 
-/* line 127, ../sass/style.scss */
+/* line 130, ../sass/style.scss */
 body.active-menu #contentWrapper {
   -webkit-transform: translate3d(85%, 0, 0);
   -moz-transform: translate3d(85%, 0, 0);
@@ -157,7 +160,7 @@ body.active-menu #contentWrapper {
   transform: translate3d(85%, 0, 0);
 }
 
-/* line 131, ../sass/style.scss */
+/* line 134, ../sass/style.scss */
 #menuBar, #logoBar {
   background-image: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 100, color-stop(0%, #ffffff), color-stop(100%, #d6f5ff));
   background-image: -webkit-radial-gradient(#ffffff, #d6f5ff);
@@ -167,7 +170,12 @@ body.active-menu #contentWrapper {
   height: 74px;
 }
 
-/* line 137, ../sass/style.scss */
+/* line 138, ../sass/style.scss */
+#logoBar {
+  z-index: 10;
+}
+
+/* line 142, ../sass/style.scss */
 #streamLogo div,
 .menuLogo {
   margin: 0 auto;
@@ -175,27 +183,28 @@ body.active-menu #contentWrapper {
   display: block;
 }
 
-/* line 142, ../sass/style.scss */
+/* line 147, ../sass/style.scss */
 #streamLogo div {
   width: 90px;
 }
 
-/* line 148, ../sass/style.scss */
+/* line 153, ../sass/style.scss */
 #streamInfo {
   padding: 5px 20px;
+  z-index: 10;
 }
-/* line 150, ../sass/style.scss */
+/* line 156, ../sass/style.scss */
 #streamInfo #streamName {
   font-weight: bold;
   display: block;
 }
-/* line 154, ../sass/style.scss */
+/* line 160, ../sass/style.scss */
 #streamInfo #nowPlaying {
   display: block;
   font-size: 90%;
 }
 
-/* line 160, ../sass/style.scss */
+/* line 166, ../sass/style.scss */
 .iOS #streamInfo {
   background-color: #1e1e1e;
   color: #ffffff;
@@ -203,23 +212,23 @@ body.active-menu #contentWrapper {
   min-height: 60px;
 }
 
-/* line 168, ../sass/style.scss */
+/* line 174, ../sass/style.scss */
 .Android #streamInfo {
   background-color: #ffffff;
   min-height: 70px;
 }
-/* line 171, ../sass/style.scss */
+/* line 177, ../sass/style.scss */
 .Android #streamInfo #streamName {
   color: #6cb3e6;
   padding: 2px 5px 3px;
   border-bottom: 3px solid #6cb3e6;
 }
-/* line 176, ../sass/style.scss */
+/* line 182, ../sass/style.scss */
 .Android #streamInfo #nowPlaying {
   margin-top: 5px;
 }
 
-/* line 186, ../sass/style.scss */
+/* line 192, ../sass/style.scss */
 .menubutton,
 #closeInfo {
   display: inline-block;
@@ -227,7 +236,7 @@ body.active-menu #contentWrapper {
   left: 10px;
 }
 
-/* line 194, ../sass/style.scss */
+/* line 200, ../sass/style.scss */
 .iOS .menubutton,
 .iOS #closeInfo {
   height: 30px;
@@ -236,7 +245,7 @@ body.active-menu #contentWrapper {
   top: 30px;
 }
 
-/* line 203, ../sass/style.scss */
+/* line 209, ../sass/style.scss */
 .Android .menubutton,
 .Android #closeInfo {
   height: 55px;
@@ -245,14 +254,14 @@ body.active-menu #contentWrapper {
   top: 8px;
 }
 
-/* line 212, ../sass/style.scss */
+/* line 218, ../sass/style.scss */
 .contactButton {
   display: inline-block;
   position: absolute;
   right: 10px;
 }
 
-/* line 218, ../sass/style.scss */
+/* line 224, ../sass/style.scss */
 .iOS .contactButton {
   background: url("../images/button-mail.png");
   height: 30px;
@@ -260,7 +269,7 @@ body.active-menu #contentWrapper {
   top: 30px;
 }
 
-/* line 226, ../sass/style.scss */
+/* line 232, ../sass/style.scss */
 .Android .contactButton {
   background: url("../images/android/contact.png");
   height: 55px;
@@ -268,34 +277,34 @@ body.active-menu #contentWrapper {
   top: 8px;
 }
 
-/* line 235, ../sass/style.scss */
+/* line 241, ../sass/style.scss */
 #appMenu {
   padding: 0 0 10%;
   list-style: none;
   font-size: 90%;
   color: #666666;
 }
-/* line 241, ../sass/style.scss */
+/* line 247, ../sass/style.scss */
 #appMenu li a {
   color: #666666;
   text-decoration: none;
   display: block;
 }
-/* line 246, ../sass/style.scss */
+/* line 252, ../sass/style.scss */
 #appMenu li:last-child {
   margin-bottom: 0;
 }
-/* line 249, ../sass/style.scss */
+/* line 255, ../sass/style.scss */
 #appMenu li .streamName {
   font-weight: bold;
   display: block;
 }
-/* line 253, ../sass/style.scss */
+/* line 259, ../sass/style.scss */
 #appMenu li .description {
   display: block;
 }
 
-/* line 261, ../sass/style.scss */
+/* line 267, ../sass/style.scss */
 .iOS #appMenu li {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #f3f3f3));
   background-image: -webkit-linear-gradient(#ffffff, #f3f3f3);
@@ -304,68 +313,68 @@ body.active-menu #contentWrapper {
   background-image: linear-gradient(#ffffff, #f3f3f3);
   border-bottom: 1px solid #d9d9d9;
 }
-/* line 264, ../sass/style.scss */
+/* line 270, ../sass/style.scss */
 .iOS #appMenu li a {
   padding: 15px 35% 15px 10%;
 }
-/* line 267, ../sass/style.scss */
+/* line 273, ../sass/style.scss */
 .iOS #appMenu li:first-child {
   border-top: 1px solid #d9d9d9;
 }
-/* line 270, ../sass/style.scss */
+/* line 276, ../sass/style.scss */
 .iOS #appMenu li #showInfo {
   background: url("../images/but-info.png") no-repeat 75% center;
 }
-/* line 274, ../sass/style.scss */
+/* line 280, ../sass/style.scss */
 .iOS #appMenu .stream-button {
   background: url("../images/but-play.png") no-repeat 75% center;
 }
 
-/* line 281, ../sass/style.scss */
+/* line 287, ../sass/style.scss */
 .Android #appMenu li {
   border-top: 3px solid #6cb3e6;
   margin: 0 20% 0 5%;
 }
-/* line 284, ../sass/style.scss */
+/* line 290, ../sass/style.scss */
 .Android #appMenu li a {
   padding: 15px 5% 45px;
 }
-/* line 287, ../sass/style.scss */
+/* line 293, ../sass/style.scss */
 .Android #appMenu li:first-child {
   margin-top: 20px;
 }
-/* line 290, ../sass/style.scss */
+/* line 296, ../sass/style.scss */
 .Android #appMenu li #showInfo {
-  background: url("../images/android/info.png") no-repeat 88% center;
+  background: url("../images/android/info.png") no-repeat 95% center;
 }
-/* line 294, ../sass/style.scss */
+/* line 300, ../sass/style.scss */
 .Android #appMenu .stream-button {
   background: url("../images/android/menuPlay.png") no-repeat 95% 95%;
 }
 
-/* line 302, ../sass/style.scss */
+/* line 308, ../sass/style.scss */
 #player {
   z-index: 10;
 }
-/* line 304, ../sass/style.scss */
+/* line 310, ../sass/style.scss */
 #player #playerControls {
   position: absolute;
   bottom: 0;
   width: 100%;
   z-index: 10;
 }
-/* line 309, ../sass/style.scss */
+/* line 315, ../sass/style.scss */
 #player #playerControls #playStream {
   display: block;
   margin: 7px auto;
 }
-/* line 313, ../sass/style.scss */
+/* line 319, ../sass/style.scss */
 #player #playerControls #stopStream {
   display: block;
   margin: 7px auto;
 }
 
-/* line 321, ../sass/style.scss */
+/* line 327, ../sass/style.scss */
 .iOS #player #playerControls {
   height: 85px;
   background-image: -webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(0%, #000000), color-stop(50%, #000000), color-stop(51%, #424242), color-stop(100%, #8d8d8d));
@@ -374,49 +383,49 @@ body.active-menu #contentWrapper {
   background-image: -o-linear-gradient(bottom, #000000 0%, #000000 50%, #424242 51%, #8d8d8d 100%);
   background-image: linear-gradient(bottom, #000000 0%, #000000 50%, #424242 51%, #8d8d8d 100%);
 }
-/* line 324, ../sass/style.scss */
+/* line 330, ../sass/style.scss */
 .iOS #player #playerControls #playStream {
   background: url("../images/play-button.png") no-repeat;
   width: 30px;
   height: 28px;
 }
-/* line 329, ../sass/style.scss */
+/* line 335, ../sass/style.scss */
 .iOS #player #playerControls #stopStream {
   background: url("../images/stop-button.png") no-repeat;
   width: 30px;
   height: 28px;
 }
 
-/* line 339, ../sass/style.scss */
+/* line 345, ../sass/style.scss */
 .Android #player #playerControls {
   height: 90px;
   background-color: #000000;
 }
-/* line 342, ../sass/style.scss */
+/* line 348, ../sass/style.scss */
 .Android #player #playerControls #playStream {
   background: url("../images/android/play.png") no-repeat;
   width: 65px;
   height: 30px;
 }
-/* line 347, ../sass/style.scss */
+/* line 353, ../sass/style.scss */
 .Android #player #playerControls #stopStream {
   background: url("../images/android/stop.png") no-repeat;
   width: 65px;
   height: 30px;
 }
 
-/* line 355, ../sass/style.scss */
+/* line 361, ../sass/style.scss */
 .hidden {
   display: none !important;
 }
 
-/* line 361, ../sass/style.scss */
+/* line 367, ../sass/style.scss */
 nav#pager {
   position: absolute;
   width: 100%;
   z-index: 12;
 }
-/* line 366, ../sass/style.scss */
+/* line 372, ../sass/style.scss */
 nav#pager ul#position {
   position: relative;
   display: block;
@@ -425,21 +434,22 @@ nav#pager ul#position {
   text-align: center;
   line-height: 0;
 }
-/* line 373, ../sass/style.scss */
+/* line 379, ../sass/style.scss */
 nav#pager ul#position li {
   display: inline-block;
   height: 8px;
   width: 8px;
   padding: 0;
+  margin: 0 3px;
   background-color: #cccccc;
   position: relative;
 }
-/* line 381, ../sass/style.scss */
+/* line 388, ../sass/style.scss */
 nav#pager ul#position li.on {
   background-color: #0099ff;
 }
 
-/* line 387, ../sass/style.scss */
+/* line 394, ../sass/style.scss */
 .iOS nav#pager {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #999999), color-stop(100%, #656565));
   background-image: -webkit-linear-gradient(#999999, #656565);
@@ -450,19 +460,12 @@ nav#pager ul#position li.on {
   padding: 4px 0;
   bottom: 85px;
 }
-/* line 392, ../sass/style.scss */
+/* line 399, ../sass/style.scss */
 .iOS nav#pager ul#position {
   margin: 0 auto;
 }
-/* line 394, ../sass/style.scss */
+/* line 401, ../sass/style.scss */
 .iOS nav#pager ul#position li {
-  display: inline-block;
-  height: 8px;
-  width: 8px;
-  padding: 0;
-  margin: 0 3px;
-  background-color: #cccccc;
-  position: relative;
   -webkit-border-radius: 4px 4px;
   -moz-border-radius: 4px / 4px;
   border-radius: 4px / 4px;
@@ -474,30 +477,20 @@ nav#pager ul#position li.on {
 
 /* line 412, ../sass/style.scss */
 .Android nav#pager {
-  background-color: #656565;
-  height: 4px;
+  background-color: #e1e1e1;
+  height: 8px;
+  padding: 4px 0;
   bottom: 90px;
 }
-/* line 416, ../sass/style.scss */
+/* line 417, ../sass/style.scss */
 .Android nav#pager ul#position {
   margin: 0 auto;
 }
-/* line 418, ../sass/style.scss */
+/* line 419, ../sass/style.scss */
 .Android nav#pager ul#position li {
-  display: inline-block;
-  height: 1px;
-  width: 8px;
-  padding: 0;
-  margin: 0;
-  border-top: 3px white solid;
-  background-color: #78b5f2;
-  position: relative;
-  float: left;
+  background-color: #aeaeae;
 }
-/* line 429, ../sass/style.scss */
+/* line 422, ../sass/style.scss */
 .Android nav#pager ul#position li.on {
   background-color: #6cb3e6;
-  height: 4px;
-  border-top: 0;
-  margin: 0;
 }

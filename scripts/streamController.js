@@ -28,7 +28,21 @@
       $.fn.player = document.createElement('audio');
     }
 
-    $.fn.player.setAttribute('src', $.fn.currentStream.streamUrlAac);
+    switch($.fn.twrCallFunctions.devicePlatform)
+    {
+      case 'iOS':
+      $.fn.currentStream.streamUrl = $.fn.currentStream.streamUrlAac;
+      break;
+
+      case 'Android':
+      $.fn.currentStream.streamUrl = $.fn.currentStream.streamUrlMp3;
+      break;
+
+      deafult:
+      $.fn.currentStream.streamUrl = $.fn.currentStream.streamUrlAac;
+    }
+
+    $.fn.player.setAttribute('src', $.fn.currentStream.streamUrl);
 
     if (noPlay == null) {
       $.fn.twrCallFunctions.playActiveStream();
@@ -84,22 +98,5 @@
       });
     }
   };
-
-  $.fn.twrCallFunctions.setAndroidPager = function(){
-    pagerLength = $.fn.twrCallFunctions.data.streams.length;
-    pagerWidth = 100 / pagerLength;
-    $.each($('#position li'), function(){
-      $(this).css("width", pagerWidth + '%');
-    });
-  }
-
-  $.fn.twrFunctions.setAndroidPagerInit = {
-    attach: function () {
-      if($.fn.twrCallFunctions.devicePlatform == 'Android'){
-        $.fn.twrCallFunctions.setAndroidPager();
-      }
-    }
-  }
-
 
 })(jQuery);
