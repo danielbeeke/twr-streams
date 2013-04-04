@@ -12,7 +12,7 @@ $.fn.twrCallFunctions = {};
   function onDeviceReady(){
 
     //$.fn.twrCallFunctions.devicePlatform = device.platform;
-    $.fn.twrCallFunctions.devicePlatform = 'Android'; // Voor ontwikkeling!
+    $.fn.twrCallFunctions.devicePlatform = 'iOS'; // Voor ontwikkeling!
     $('body').addClass($.fn.twrCallFunctions.devicePlatform);
 
     var streamTemplate = twig({
