@@ -3,9 +3,14 @@
   $.fn.currentStream = null;
   $.fn.currentStreamIndex = null;
 
+      function tryDebug(type, data) {
+        console.log(type)
+          console.log(data)
+      }
+
+
   $.fn.twrCallFunctions.setActiveStream = function (index, noPlay) {
     // Let's check if possible to slide to.
-
     if (!$.fn.twrCallFunctions.data.streams[index]) {
       return false;
     }
@@ -32,18 +37,21 @@
     {
       case 'iOS':
       $.fn.currentStream.streamUrl = $.fn.currentStream.streamUrlAac;
+      $.fn.currentStream.streamType = 'audio/aac';
       break;
 
       case 'Android':
       $.fn.currentStream.streamUrl = $.fn.currentStream.streamUrlMp3;
+      $.fn.currentStream.streamType = 'audio/mpeg';
       break;
 
       default:
       $.fn.currentStream.streamUrl = $.fn.currentStream.streamUrlMp3;
+      $.fn.currentStream.streamType = 'audio/mpeg';
     }
 
     $.fn.player.setAttribute('src', $.fn.currentStream.streamUrl);
-
+    $.fn.player.type = $.fn.currentStream.streamType;
     if (noPlay == null) {
       $.fn.twrCallFunctions.playActiveStream();
     }
@@ -52,14 +60,17 @@
   }
 
   $.fn.twrCallFunctions.playActiveStream = function () {
+    
     $.fn.player.play();
+
+//       setTimeout(function () {
+// console.log($.fn.player.networkState)
+//       }, 100)
 
     $('#stopStream').removeClass('hidden');
     $('#playStream').addClass('hidden');
-
     // Set interval for the metadata
     $.fn.twrCallFunctions.setMetadataInterval();
-
   }
 
   $.fn.twrCallFunctions.stopActiveStream = function () {

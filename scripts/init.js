@@ -11,8 +11,8 @@ $.fn.twrCallFunctions = {};
 
   function onDeviceReady(){
 
-    //$.fn.twrCallFunctions.devicePlatform = device.platform;
-    $.fn.twrCallFunctions.devicePlatform = 'iOS'; // Voor ontwikkeling!
+    $.fn.twrCallFunctions.devicePlatform = device.platform;
+    // $.fn.twrCallFunctions.devicePlatform = 'Android'; // Voor ontwikkeling!
     $('body').addClass($.fn.twrCallFunctions.devicePlatform);
 
     var streamTemplate = twig({
@@ -59,7 +59,6 @@ $.fn.twrCallFunctions = {};
   }
 
 // Only for debugging on computers without Cordova.
-onDeviceReady();
-
+// onDeviceReady();
 
 })(jQuery);
