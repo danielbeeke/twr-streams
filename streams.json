@@ -2,7 +2,7 @@
     {
       "streamName"        : "TWR Worship & Praise",
       "streamMeta"        : "w-praise",
-      "streamUrlMp3"      : "http://http.yourmuze.com/w-praise/mp3-32-j.mp3",
+      "streamUrlMp3"      : "http://http.yourmuze.com/w-praise/mp3-128-s.mp3",
       "streamUrlAac"      : "http://www.yourmuze.com/desktop/w-praise/wpraise.m3u",
       "streamLogo"        : "TWR-WP",
       "streamDescTeaser"  : "Luister 24 uur per dag naar de mooiste gospelmuziek.",
@@ -12,7 +12,7 @@
     {
       "streamName"        : "TWR Richt je hart op God",
       "streamMeta"        : "twr-stream",
-      "streamUrlMp3"      : "http://http.yourmuze.com/twr-stream/mp3-32-j.mp3",
+      "streamUrlMp3"      : "http://http.yourmuze.com/twr-stream/mp3-128-s.mp3",
       "streamUrlAac"      : "http://www.yourmuze.com/desktop/twr-stream/twrvooru.m3u",
       "streamLogo"        : "TWR-R",
       "streamDescTeaser"  : "Laat u bemoedigen in uw dagelijks leven met God.",
